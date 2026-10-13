@@ -163,6 +163,8 @@ def check_reading(card):
         fail(f"a parallel needs relation in {list(RELATIONS)}")
     if card.get("parallel_label") and not card.get("parallel_text"):
         fail("`parallel_label` needs `parallel_text`")
+    if card.get("question_type") not in ("debate", "open"):
+        fail("question_type must be 'debate' or 'open'")
     news = card.get("news") or {}
     if news and not (news.get("text") and str(news.get("url", "")).startswith("https://")):
         fail("news needs text and an https url")
@@ -229,6 +231,7 @@ def reading_data(card):
         "rw": f"<b>{html.escape(r['word_translit'])}</b> = {html.escape(r['word_meaning'])}",
         "body": rich(card["body"]),
         "question": html.escape(card["question"]),
+        "qlabel": {"debate": "Scholars debate", "open": "Open question"}.get(card.get("question_type"), "Reflect"),
         "source": html.escape(card["source_label"]),
         "date": fmt_date(card["date"]),
         "_hide": [],

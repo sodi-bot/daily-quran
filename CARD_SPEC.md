@@ -80,7 +80,8 @@ Fairness and accuracy:
 | `bible` + `relation` | optional. Bible ref like `Matthew 6:9-10` (max 3 verses; text comes from ASV automatically). `relation`: `aligns`, `differs`, `retells`, or `echo` |
 | `parallel_label` + `parallel_text` + `relation` | instead of `bible`, for non-biblical texts (Mishnah, infancy gospels, Syriac legends); text ≤ 35 words, your paraphrase |
 | `news` | optional `{"text": "≤ 22 words", "url": "https://..."}` |
-| `question` | ≤ 24 words, one open question grounded in a **real scholarly debate** (ideally the one in the body) or in a close look at the wording. Never build in a premise the scholarship doesn't support. If scholars disagree, let the question invite the reader to weigh the options |
+| `question` | ≤ 24 words, one question about the text. Set `question_type`: `debate` when it asks the reader to weigh a real scholarly disagreement (ideally the one in the body), or `open` when it goes beyond the research: a fresh angle on the wording or a connection scholars rarely make. Mix both kinds over the week, roughly half each. Open questions must still be fair to the text: no false claims, no premise the wording contradicts |
+| `question_type` | `debate` (card label: “Scholars debate”) or `open` (card label: “Open question”) |
 | `source_label` | short: the key scholarly / Lutheran source(s) |
 | `source_url` | **required** https link to the main source behind the body: the scholarly article, book page, inscription record or primary text (e.g. bookofconcord.org). Open it with WebFetch and confirm it supports the claim. Prefer open-access pages over paywalls |
 | `reading` | optional: one book or article to go deeper |
