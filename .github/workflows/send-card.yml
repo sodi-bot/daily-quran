@@ -1,0 +1,58 @@
+name: Send daily card
+
+on:
+  push:
+    branches: [main]
+    paths: ["cards/*.json"]
+  workflow_dispatch:
+    inputs:
+      card:
+        description: "Card file to (re)send, e.g. cards/2026-10-13.json"
+        required: true
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Find new cards
+        id: cards
+        run: |
+          if [ -n "${{ github.event.inputs.card }}" ]; then
+            echo "files=${{ github.event.inputs.card }}" >> "$GITHUB_OUTPUT"
+          else
+            files=$(git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} -- 'cards/*.json' 2>/dev/null || git show --name-only --pretty= HEAD -- 'cards/*.json')
+            echo "files=$(echo $files)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.cards.outputs.files != ''
+        with:
+          python-version: "3.12"
+
+      - name: Install renderer
+        if: steps.cards.outputs.files != ''
+        run: |
+          pip install playwright==1.49.1
+          python -m playwright install --with-deps chromium
+
+      - name: Render and send
+        if: steps.cards.outputs.files != ''
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          for f in ${{ steps.cards.outputs.files }}; do
+            png="${f%.json}.png"
+            python scripts/render.py "$f" "$png"
+            python scripts/send.py "$f" "$png"
+          done
+
+      - uses: actions/upload-artifact@v4
+        if: steps.cards.outputs.files != ''
+        with:
+          name: cards
+          path: cards/*.png
