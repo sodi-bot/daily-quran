@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""Render a daily card JSON into a PNG.
+"""Render a daily Qur'an x Bible card JSON into a PNG.
 
-Usage: python3 scripts/render.py cards/2026-10-13.json [out.png]
+Usage: python3 scripts/render.py cards/2026-10-14.json [out.png]
 
-The Arabic is never taken from the card file: it is looked up from
-data/quran-uthmani.json (Tanzil) using the card's `verses` field, so the
-verse text is always exact.
+Scripture is never taken from the card file when it can be looked up:
+- Arabic comes from data/quran-uthmani.json (Tanzil) via `verses`
+- Bible text comes from data/bible-asv.json (American Standard Version, 1901,
+  public domain) via `bible`
+Only non-biblical parallels (Mishnah, Infancy Gospels, Syriac legends...) use
+the card's own `parallel_text`, which must be a paraphrase and is labelled so.
 """
 import datetime as dt
 import html
@@ -17,41 +20,86 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 QURAN = json.loads((ROOT / "data/quran-uthmani.json").read_text(encoding="utf-8"))
 CHAPTERS = json.loads((ROOT / "data/chapters.json").read_text(encoding="utf-8"))
+BIBLE = json.loads((ROOT / "data/bible-asv.json").read_text(encoding="utf-8"))
 
-REQUIRED = ["date", "title", "verses", "translation", "body", "question", "source_label", "source_url"]
-LIMITS = {"title": 9, "translation": 45, "body": 75, "question": 26}  # max words
-
-ICONS = {  # simple line icons, 24x24 viewBox, stroke-based
-    "book": '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/><path d="M9 7h6"/>',
-    "scroll": '<path d="M8 21h11a2 2 0 0 0 2-2v-1H10v1a2 2 0 0 1-4 0V5a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2h4"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/>',
-    "cloud": '<path d="M17.5 19H8a5 5 0 1 1 1.2-9.86A6 6 0 0 1 20 11.5 3.75 3.75 0 0 1 17.5 19z"/>',
-    "smoke": '<path d="M4 18c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 4-1.5"/><path d="M4 13c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 4-1.5"/><path d="M6 8c2-1.5 4-1.5 6 0s4 1.5 6 0"/>',
-    "water": '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
-    "leaf": '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
-    "globe": '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/>',
-    "scale": '<path d="M12 3v18"/><path d="M5 21h14"/><path d="M3 7h18"/><path d="M6 7l-3 7a3 3 0 0 0 6 0z"/><path d="M18 7l-3 7a3 3 0 0 0 6 0z"/>',
-    "flame": '<path d="M12 22a7 7 0 0 0 7-7c0-4-3-6-4-9-2 2-2 4-3 5-1-2-2-3-2-5-3 3-5 6-5 9a7 7 0 0 0 7 7z"/>',
-    "star": '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
-    "moon": '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
-    "people": '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.5a5 5 0 0 1 5.5 5"/>',
-    "mountain": '<path d="M3 20l6-11 4 7 3-4 5 8z"/>',
-    "seed": '<path d="M12 21V11"/><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"/><path d="M12 14c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5z"/>',
-    "ship": '<path d="M3 17l2 4h14l2-4z"/><path d="M5 17V11h14v6"/><path d="M12 11V3l5 5h-5"/>',
+REQUIRED = ["date", "relation", "title", "verses", "translation", "body", "question", "source_label"]
+LIMITS = {"title": 9, "translation": 40, "body": 70, "question": 24, "parallel_text": 35}  # max words
+RELATIONS = {
+    "aligns": "Where they meet",
+    "differs": "Where they part",
+    "retells": "Same story, retold",
 }
+TAGS = {"bible": "Qur'an & the Bible", "news": "Qur'an & the news"}
+
+ABBR = {
+    "gen": "Genesis", "gn": "Genesis", "ex": "Exodus", "exod": "Exodus", "lev": "Leviticus",
+    "num": "Numbers", "deut": "Deuteronomy", "dt": "Deuteronomy", "josh": "Joshua",
+    "judg": "Judges", "1sam": "1 Samuel", "2sam": "2 Samuel", "1kgs": "1 Kings", "2kgs": "2 Kings",
+    "1kings": "1 Kings", "2kings": "2 Kings", "1chr": "1 Chronicles", "2chr": "2 Chronicles",
+    "neh": "Nehemiah", "esth": "Esther", "ps": "Psalms", "psalm": "Psalms", "psa": "Psalms",
+    "prov": "Proverbs", "eccl": "Ecclesiastes", "eccles": "Ecclesiastes", "song": "Song of Solomon",
+    "isa": "Isaiah", "jer": "Jeremiah", "lam": "Lamentations", "ezek": "Ezekiel", "dan": "Daniel",
+    "hos": "Hosea", "obad": "Obadiah", "jon": "Jonah", "mic": "Micah", "nah": "Nahum",
+    "hab": "Habakkuk", "zeph": "Zephaniah", "hag": "Haggai", "zech": "Zechariah", "mal": "Malachi",
+    "matt": "Matthew", "mt": "Matthew", "mk": "Mark", "mrk": "Mark", "lk": "Luke", "jn": "John",
+    "rom": "Romans", "1cor": "1 Corinthians", "2cor": "2 Corinthians", "gal": "Galatians",
+    "eph": "Ephesians", "phil": "Philippians", "col": "Colossians", "1thess": "1 Thessalonians",
+    "2thess": "2 Thessalonians", "1tim": "1 Timothy", "2tim": "2 Timothy", "tit": "Titus",
+    "phlm": "Philemon", "philem": "Philemon", "heb": "Hebrews", "jas": "James", "1pet": "1 Peter",
+    "2pet": "2 Peter", "1jn": "1 John", "2jn": "2 John", "3jn": "3 John", "rev": "Revelation",
+}
+for _name in BIBLE:
+    ABBR[_name.lower().replace(" ", "")] = _name
 
 AR_DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
 
 
-def parse_ref(ref):
+def parse_quran(ref):
     m = re.fullmatch(r"\s*(\d{1,3}):(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?\s*", ref)
     if not m:
         raise SystemExit(f"bad verses ref {ref!r}; use e.g. '44:10' or '44:10-11'")
     s, a, b = int(m[1]), int(m[2]), int(m[3] or m[2])
-    if str(s) not in QURAN or b < a or b - a > 3:
-        raise SystemExit(f"verses ref {ref!r} out of range (max 4 verses)")
-    if str(b) not in QURAN[str(s)]:
-        raise SystemExit(f"surah {s} has no verse {b}")
+    if str(s) not in QURAN or b < a or b - a > 3 or str(b) not in QURAN[str(s)]:
+        raise SystemExit(f"verses ref {ref!r} invalid (max 4 verses)")
     return s, a, b
+
+
+def parse_bible(ref):
+    m = re.fullmatch(r"\s*([1-3]?\s*[A-Za-z][A-Za-z .]*?)\s*(\d{1,3}):(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?\s*", ref)
+    if not m:
+        raise SystemExit(f"bad bible ref {ref!r}; use e.g. 'Genesis 3:6' or 'Matt 19:23-24'")
+    key = re.sub(r"[\s.]", "", m[1]).lower()
+    book = ABBR.get(key)
+    if not book:
+        raise SystemExit(f"unknown Bible book {m[1]!r}")
+    c, a, b = int(m[2]), int(m[3]), int(m[4] or m[3])
+    chs = BIBLE[book]
+    if c > len(chs) or b < a or b - a > 2 or b > len(chs[c - 1]):
+        raise SystemExit(f"bible ref {ref!r} invalid (max 3 verses)")
+    text = " ".join(chs[c - 1][v - 1] for v in range(a, b + 1))
+    label = f"{book} {c}:{a}" + (f"–{b}" if b > a else "") + " · ASV"
+    return text, label
+
+
+def words(t):
+    return len(re.sub(r"\*\*", "", t).split())
+
+
+def check(card):
+    missing = [k for k in REQUIRED if not str(card.get(k, "")).strip()]
+    if missing:
+        raise SystemExit(f"card missing fields: {missing}")
+    if card["relation"] not in RELATIONS:
+        raise SystemExit(f"relation must be one of {list(RELATIONS)}")
+    if bool(card.get("bible")) == bool(card.get("parallel_label")):
+        raise SystemExit("give exactly one of `bible` or `parallel_label` + `parallel_text`")
+    if card.get("parallel_label") and not card.get("parallel_text"):
+        raise SystemExit("`parallel_label` needs `parallel_text`")
+    for k, n in LIMITS.items():
+        if card.get(k) and words(card[k]) > n:
+            raise SystemExit(f"{k} has {words(card[k])} words; limit is {n}")
+    if card.get("source_url") and not card["source_url"].startswith("https://"):
+        raise SystemExit("source_url must be https")
 
 
 def arabic_html(s, a, b):
@@ -63,38 +111,31 @@ def arabic_html(s, a, b):
 
 
 def rich(text):
-    t = html.escape(text)
-    return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t)
-
-
-def check(card):
-    missing = [k for k in REQUIRED if not str(card.get(k, "")).strip()]
-    if missing:
-        raise SystemExit(f"card missing fields: {missing}")
-    for k, n in LIMITS.items():
-        words = len(re.sub(r"\*\*", "", card[k]).split())
-        if words > n:
-            raise SystemExit(f"{k} has {words} words; limit is {n}")
-    if not card["source_url"].startswith("https://"):
-        raise SystemExit("source_url must be https")
+    return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", html.escape(text))
 
 
 def render(card_path, out_path):
     card = json.loads(pathlib.Path(card_path).read_text(encoding="utf-8"))
     check(card)
-    s, a, b = parse_ref(card["verses"])
+    s, a, b = parse_quran(card["verses"])
     ch = CHAPTERS[str(s)]
-    ref_txt = f"Qur'an {s}:{a}" + (f"–{b}" if b > a else "") + f" · {ch['name']} ({ch['meaning']})"
+    meaning = f" ({ch['meaning']})" if ch["meaning"].lower() != ch["name"].lower() else ""
+    qref = f"Qur'an {s}:{a}" + (f"–{b}" if b > a else "") + f" · {ch['name']}{meaning}"
+    if card.get("bible"):
+        ptext, pref = parse_bible(card["bible"])
+    else:
+        ptext, pref = card["parallel_text"], card["parallel_label"] + " · paraphrase"
     date = dt.date.fromisoformat(card["date"])
-    icon = ICONS.get(card.get("icon", "book"), ICONS["book"])
     data = {
-        "tag": card.get("tag", "Qur'an & the news"),
+        "tag": TAGS.get(card.get("tag", "bible"), card.get("tag", TAGS["bible"])),
         "day": date.strftime("%a").upper(),
-        "icon": f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{icon}</svg>',
+        "relation": RELATIONS[card["relation"]],
         "title": html.escape(card["title"]),
         "arabic": arabic_html(s, a, b),
         "translation": "“" + html.escape(card["translation"]) + "”",
-        "ref": html.escape(ref_txt),
+        "ref": html.escape(qref),
+        "ptext": "“" + html.escape(ptext) + "”",
+        "pref": html.escape(pref),
         "body": rich(card["body"]),
         "question": html.escape(card["question"]),
         "source": html.escape(card["source_label"]),
@@ -110,8 +151,8 @@ def render(card_path, out_path):
         pg.evaluate("document.fonts.ready")
         pg.wait_for_timeout(300)
         h = pg.evaluate("document.getElementById('card').scrollHeight")
-        if h > 1600:
-            raise SystemExit(f"card is too tall ({h}px); shorten the text")
+        if h > 1750:
+            raise SystemExit(f"card is too tall ({h}px, max 1750); shorten the text")
         pg.locator("#card").screenshot(path=str(out_path))
         br.close()
     return card, h
