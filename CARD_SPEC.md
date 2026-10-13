@@ -1,7 +1,9 @@
 # Daily Qur'an card: how to write one
 
-The cards read through the Qur'an **in order**, a few verses a day, starting with Al-Fatiha and
-then the short surahs of Juz' Amma from 114 back to 78 (`data/plan.json`, 146 readings).
+The cards visit **every surah once, in the order of revelation reconstructed by Theodor
+Nöldeke** (the academic standard), starting with 96 al-'Alaq (`data/plan.json`, 114 readings,
+see `data/NOLDEKE_SOURCE.txt`). Short surahs are read whole; for long ones the card shows one
+key passage. Each card is labelled with Nöldeke's period (Early, Middle, Late Meccan, Medinan).
 Each card teaches **one Arabic root**, explains the passage from an **academic angle**, and,
 when there is one, compares it with a **Bible parallel** and the **Lutheran** reading of it.
 
@@ -10,7 +12,7 @@ when there is one, compares it with a **Bible parallel** and the **Lutheran** re
 
 Write `cards/YYYY-MM-DD.json` (Jakarta date), render it to check, then commit and push to
 `main`. The GitHub Action renders the PNG and sends it to Telegram.
-`examples/reading-1-fatiha.json` is a model reading card.
+`examples/reading-1-alaq.json` is a model reading card.
 
 ## Sunday: recap
 
@@ -23,8 +25,17 @@ If there were no reading cards in the past 6 days, skip the recap and write a re
 
 ## Monday–Saturday: reading
 
-1. Run `python3 scripts/passage.py`. It prints the next reading with every Arabic word
-   numbered, plus the roots taught so far. Never type Arabic verse text yourself.
+1. Run `python3 scripts/passage.py`. It prints the next reading, plus the roots taught so far.
+   Never type Arabic verse text yourself.
+   - **Whole surah**: every word is printed with numbers. Use the plan's range; no `verses` field.
+   - **Long surah**: the whole surah is printed. Choose **one key passage** (max 5 consecutive
+     verses, 450 Arabic characters): the passage scholars most discuss, the one that best shows
+     the surah's main theme or what is typical of its period, and, where the surah has one, a
+     passage with a real Bible parallel (Joseph in 12, Mary in 19, Moses in 20, Abraham in 37…).
+     Then run `python3 scripts/passage.py N S:A-B` for word numbers and set `verses` to `S:A-B`.
+     Say in the body, briefly, where the passage sits in the surah if that helps.
+   - Nöldeke dates some verses later than their surah (e.g. 73:20 is usually seen as Medinan).
+     If your passage is one of these, say so.
 2. **Root.** Pick one root that appears in the passage. Prefer a new, common, useful root
    (high frequency in the Qur'an, or key to this passage). About one card in five, choose a
    root already taught (a review); the card marks it automatically. Point to the word by
@@ -32,7 +43,8 @@ If there were no reading cards in the past 6 days, skip the recap and write a re
 3. **Academic angle (the body).** One concrete thing scholars discuss about this passage:
    - word history (Aramaic/Syriac/Ethiopic/South Arabian links), e.g. Jeffery, *Foreign Vocabulary*; Sinai, *Key Terms of the Qur'an*
    - early interpreters disagreeing (al-Tabari, Ibn Kathir, Ibn Abbas, Ibn Mas'ud)
-   - dating and structure (Nöldeke's chronology, Neuwirth, Sinai), rhyme and form
+   - dating and structure (Nöldeke's chronology, Neuwirth, Sinai), rhyme and form; how this
+     passage fits its period, and what changes from earlier periods
    - historical context of late antique Arabia (inscriptions, Himyar, Byzantium, Persia)
    - manuscripts and readings (Birmingham, Sana'a, qira'at), van Putten, Sadeghi
 4. **Bible parallel, if any.** If a real biblical (or other late antique) parallel exists, add
@@ -56,6 +68,7 @@ Fairness and accuracy:
 | `type` | `"reading"` |
 | `date` | `YYYY-MM-DD` (Asia/Jakarta) |
 | `plan` | reading number from passage.py |
+| `verses` | only for long surahs: the key passage, `S:A-B`, max 5 verses |
 | `title` | ≤ 9 words, sentence case |
 | `translation` | ≤ 60 words, your own plain English rendering of the whole passage |
 | `root.letters` | the root letters in Arabic separated by spaces, e.g. `"ر ح م"` |

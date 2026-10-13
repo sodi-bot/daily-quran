@@ -68,6 +68,33 @@ def passage(n):
     return PLAN[n - 1]
 
 
+MAX_VERSES, MAX_CHARS = 5, 450
+
+
+def card_passage(card):
+    """The plan entry for this card, with the verse range filled in.
+
+    Whole surahs take their range from the plan; for longer surahs the card
+    chooses a key passage in `verses` ("S:A-B", max 5 verses)."""
+    p = dict(passage(int(card["plan"])))
+    if p["whole"]:
+        return p
+    ref = str(card.get("verses", ""))
+    m = re.fullmatch(r"\s*(\d{1,3}):(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?\s*", ref)
+    if not m:
+        fail(f"reading {p['n']} is a key passage from surah {p['surah']}: set `verses` like '{p['surah']}:1-5'")
+    s, a, b = int(m[1]), int(m[2]), int(m[3] or m[2])
+    if s != p["surah"]:
+        fail(f"`verses` must be in surah {p['surah']} for reading {p['n']}")
+    if b < a or b > p["verses_total"] or b - a + 1 > MAX_VERSES:
+        fail(f"`verses` {ref!r} invalid (surah has {p['verses_total']} verses; max {MAX_VERSES} per card)")
+    chars = sum(len(QURAN[str(s)][str(v)]) for v in range(a, b + 1))
+    if chars > MAX_CHARS:
+        fail(f"passage {ref} is too long for a card ({chars} Arabic characters, max {MAX_CHARS}); choose fewer or shorter verses")
+    p.update({"from": a, "to": b})
+    return p
+
+
 def ref_text(p):
     r = f"{p['surah']}:{p['from']}" + (f"–{p['to']}" if p["to"] > p["from"] else "")
     meaning = f" ({p['meaning']})" if p["meaning"].lower() != p["name"].lower() else ""
@@ -183,13 +210,15 @@ def fmt_date(d):
 
 def reading_data(card):
     check_reading(card)
-    p = passage(int(card["plan"]))
+    p = card_passage(card)
     _, qref = ref_text(p)
+    chars = sum(len(QURAN[str(p["surah"])][str(v)]) for v in range(p["from"], p["to"] + 1))
     r = card["root"]
     d = {
         "tag": f"Reading {card['plan']} of {len(PLAN)}",
+        "_arsize": 42 if chars <= 300 else 36,
         "day": dt.date.fromisoformat(card["date"]).strftime("%a").upper(),
-        "over": html.escape(f"{p['name']} · {p['surah']}:{p['from']}" + (f"–{p['to']}" if p["to"] > p["from"] else "")),
+        "over": html.escape(f"{p['period']} · Nöldeke #{p['n']}"),
         "title": html.escape(card["title"]),
         "arabic": arabic_html(p, r),
         "translation": "“" + html.escape(card["translation"]) + "”",
@@ -237,7 +266,7 @@ def recap_data(card):
             roots.append(c["root"])
     items = []
     for c in wk:
-        p = passage(int(c["plan"]))
+        p = card_passage(c)
         r = f"{p['surah']}:{p['from']}" + (f"–{p['to']}" if p["to"] > p["from"] else "")
         items.append(f'<div class="item"><span class="r">{r}</span><span>{html.escape(c["title"])}</span></div>')
     tiles = [
@@ -253,7 +282,7 @@ def recap_data(card):
         "passages": "".join(items),
         "roots": "".join(tiles),
         "question": html.escape(card.get("question") or "Reread one passage aloud and point to each root you know."),
-        "progress": f"Reading {last} of {len(PLAN)} · {round(100 * last / len(PLAN))}% of the plan",
+        "progress": f"Reading {last} of {len(PLAN)} · {PLAN[last - 1]['period']}",
         "date": fmt_date(card["date"]),
         "_hide": [],
     }
@@ -270,6 +299,7 @@ def render(card_path, out_path):
     else:
         fail("type must be 'reading' or 'recap'")
     hide = data.pop("_hide")
+    arsize = data.pop("_arsize", None)
     from playwright.sync_api import sync_playwright
 
     with sync_playwright() as p:
@@ -278,6 +308,8 @@ def render(card_path, out_path):
         pg.goto((ROOT / "template" / tpl).as_uri())
         pg.evaluate("([d, h]) => { for (const [k,v] of Object.entries(d)) { const e = document.getElementById(k); if (e) e.innerHTML = v; }"
                     " for (const id of h) document.getElementById(id).classList.add('hide'); }", [data, hide])
+        if arsize:
+            pg.evaluate("s => { document.getElementById('arabic').style.fontSize = s + 'px'; }", arsize)
         pg.evaluate("document.fonts.ready")
         pg.wait_for_timeout(300)
         h = pg.evaluate("document.getElementById('card').scrollHeight")
