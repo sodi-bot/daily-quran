@@ -118,9 +118,11 @@ def root_status(card):
 
 
 def check_reading(card):
-    for k in ["date", "plan", "title", "translation", "root", "body", "question", "source_label"]:
+    for k in ["date", "plan", "title", "translation", "root", "body", "question", "source_label", "source_url"]:
         if not card.get(k):
             fail(f"card missing {k}")
+    if not str(card["source_url"]).startswith("https://"):
+        fail("source_url must be an https link")
     r = card["root"]
     for k in ["letters", "translit", "meaning", "verse", "index", "word_translit", "word_meaning"]:
         if not r.get(k):

@@ -69,7 +69,7 @@ Fairness and accuracy:
 | `news` | optional `{"text": "≤ 22 words", "url": "https://..."}` |
 | `question` | ≤ 24 words, one open question that sends the reader back to the text |
 | `source_label` | short: the key scholarly / Lutheran source(s) |
-| `source_url` | optional https link to a primary or scholarly source |
+| `source_url` | **required** https link to the main source behind the body: the scholarly article, book page, inscription record or primary text (e.g. bookofconcord.org). Open it with WebFetch and confirm it supports the claim. Prefer open-access pages over paywalls |
 | `reading` | optional: one book or article to go deeper |
 
 Use curly quotes (“ ” ’) inside text so the JSON stays valid.
