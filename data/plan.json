@@ -1,0 +1,1170 @@
+[
+{
+"n": 1,
+"surah": 1,
+"from": 1,
+"to": 7,
+"name": "Al-Faatiha",
+"meaning": "The Opening"
+},
+{
+"n": 2,
+"surah": 114,
+"from": 1,
+"to": 6,
+"name": "An-Naas",
+"meaning": "Mankind"
+},
+{
+"n": 3,
+"surah": 113,
+"from": 1,
+"to": 5,
+"name": "Al-Falaq",
+"meaning": "The Dawn"
+},
+{
+"n": 4,
+"surah": 112,
+"from": 1,
+"to": 4,
+"name": "Al-Ikhlaas",
+"meaning": "Sincerity"
+},
+{
+"n": 5,
+"surah": 111,
+"from": 1,
+"to": 5,
+"name": "Al-Masad",
+"meaning": "The Palm Fibre"
+},
+{
+"n": 6,
+"surah": 110,
+"from": 1,
+"to": 3,
+"name": "An-Nasr",
+"meaning": "Divine Support"
+},
+{
+"n": 7,
+"surah": 109,
+"from": 1,
+"to": 6,
+"name": "Al-Kaafiroon",
+"meaning": "The Disbelievers"
+},
+{
+"n": 8,
+"surah": 108,
+"from": 1,
+"to": 3,
+"name": "Al-Kawthar",
+"meaning": "Abundance"
+},
+{
+"n": 9,
+"surah": 107,
+"from": 1,
+"to": 7,
+"name": "Al-Maa'un",
+"meaning": "Almsgiving"
+},
+{
+"n": 10,
+"surah": 106,
+"from": 1,
+"to": 4,
+"name": "Quraish",
+"meaning": "Quraysh"
+},
+{
+"n": 11,
+"surah": 105,
+"from": 1,
+"to": 5,
+"name": "Al-Fil",
+"meaning": "The Elephant"
+},
+{
+"n": 12,
+"surah": 104,
+"from": 1,
+"to": 4,
+"name": "Al-Humaza",
+"meaning": "The Traducer"
+},
+{
+"n": 13,
+"surah": 104,
+"from": 5,
+"to": 9,
+"name": "Al-Humaza",
+"meaning": "The Traducer"
+},
+{
+"n": 14,
+"surah": 103,
+"from": 1,
+"to": 3,
+"name": "Al-Asr",
+"meaning": "The Declining Day, Epoch"
+},
+{
+"n": 15,
+"surah": 102,
+"from": 1,
+"to": 4,
+"name": "At-Takaathur",
+"meaning": "Competition"
+},
+{
+"n": 16,
+"surah": 102,
+"from": 5,
+"to": 8,
+"name": "At-Takaathur",
+"meaning": "Competition"
+},
+{
+"n": 17,
+"surah": 101,
+"from": 1,
+"to": 4,
+"name": "Al-Qaari'a",
+"meaning": "The Calamity"
+},
+{
+"n": 18,
+"surah": 101,
+"from": 5,
+"to": 7,
+"name": "Al-Qaari'a",
+"meaning": "The Calamity"
+},
+{
+"n": 19,
+"surah": 101,
+"from": 8,
+"to": 11,
+"name": "Al-Qaari'a",
+"meaning": "The Calamity"
+},
+{
+"n": 20,
+"surah": 100,
+"from": 1,
+"to": 4,
+"name": "Al-Aadiyaat",
+"meaning": "The Chargers"
+},
+{
+"n": 21,
+"surah": 100,
+"from": 5,
+"to": 7,
+"name": "Al-Aadiyaat",
+"meaning": "The Chargers"
+},
+{
+"n": 22,
+"surah": 100,
+"from": 8,
+"to": 11,
+"name": "Al-Aadiyaat",
+"meaning": "The Chargers"
+},
+{
+"n": 23,
+"surah": 99,
+"from": 1,
+"to": 4,
+"name": "Az-Zalzala",
+"meaning": "The Earthquake"
+},
+{
+"n": 24,
+"surah": 99,
+"from": 5,
+"to": 8,
+"name": "Az-Zalzala",
+"meaning": "The Earthquake"
+},
+{
+"n": 25,
+"surah": 98,
+"from": 1,
+"to": 1,
+"name": "Al-Bayyina",
+"meaning": "The Evidence"
+},
+{
+"n": 26,
+"surah": 98,
+"from": 2,
+"to": 3,
+"name": "Al-Bayyina",
+"meaning": "The Evidence"
+},
+{
+"n": 27,
+"surah": 98,
+"from": 4,
+"to": 4,
+"name": "Al-Bayyina",
+"meaning": "The Evidence"
+},
+{
+"n": 28,
+"surah": 98,
+"from": 5,
+"to": 5,
+"name": "Al-Bayyina",
+"meaning": "The Evidence"
+},
+{
+"n": 29,
+"surah": 98,
+"from": 6,
+"to": 7,
+"name": "Al-Bayyina",
+"meaning": "The Evidence"
+},
+{
+"n": 30,
+"surah": 98,
+"from": 8,
+"to": 8,
+"name": "Al-Bayyina",
+"meaning": "The Evidence"
+},
+{
+"n": 31,
+"surah": 97,
+"from": 1,
+"to": 5,
+"name": "Al-Qadr",
+"meaning": "The Power, Fate"
+},
+{
+"n": 32,
+"surah": 96,
+"from": 1,
+"to": 5,
+"name": "Al-Alaq",
+"meaning": "The Clot"
+},
+{
+"n": 33,
+"surah": 96,
+"from": 6,
+"to": 10,
+"name": "Al-Alaq",
+"meaning": "The Clot"
+},
+{
+"n": 34,
+"surah": 96,
+"from": 11,
+"to": 14,
+"name": "Al-Alaq",
+"meaning": "The Clot"
+},
+{
+"n": 35,
+"surah": 96,
+"from": 15,
+"to": 19,
+"name": "Al-Alaq",
+"meaning": "The Clot"
+},
+{
+"n": 36,
+"surah": 95,
+"from": 1,
+"to": 4,
+"name": "At-Tin",
+"meaning": "The Fig"
+},
+{
+"n": 37,
+"surah": 95,
+"from": 5,
+"to": 8,
+"name": "At-Tin",
+"meaning": "The Fig"
+},
+{
+"n": 38,
+"surah": 94,
+"from": 1,
+"to": 4,
+"name": "Ash-Sharh",
+"meaning": "The Consolation"
+},
+{
+"n": 39,
+"surah": 94,
+"from": 5,
+"to": 8,
+"name": "Ash-Sharh",
+"meaning": "The Consolation"
+},
+{
+"n": 40,
+"surah": 93,
+"from": 1,
+"to": 4,
+"name": "Ad-Dhuhaa",
+"meaning": "The Morning Hours"
+},
+{
+"n": 41,
+"surah": 93,
+"from": 5,
+"to": 7,
+"name": "Ad-Dhuhaa",
+"meaning": "The Morning Hours"
+},
+{
+"n": 42,
+"surah": 93,
+"from": 8,
+"to": 11,
+"name": "Ad-Dhuhaa",
+"meaning": "The Morning Hours"
+},
+{
+"n": 43,
+"surah": 92,
+"from": 1,
+"to": 4,
+"name": "Al-Lail",
+"meaning": "The Night"
+},
+{
+"n": 44,
+"surah": 92,
+"from": 5,
+"to": 8,
+"name": "Al-Lail",
+"meaning": "The Night"
+},
+{
+"n": 45,
+"surah": 92,
+"from": 9,
+"to": 13,
+"name": "Al-Lail",
+"meaning": "The Night"
+},
+{
+"n": 46,
+"surah": 92,
+"from": 14,
+"to": 17,
+"name": "Al-Lail",
+"meaning": "The Night"
+},
+{
+"n": 47,
+"surah": 92,
+"from": 18,
+"to": 21,
+"name": "Al-Lail",
+"meaning": "The Night"
+},
+{
+"n": 48,
+"surah": 91,
+"from": 1,
+"to": 5,
+"name": "Ash-Shams",
+"meaning": "The Sun"
+},
+{
+"n": 49,
+"surah": 91,
+"from": 6,
+"to": 10,
+"name": "Ash-Shams",
+"meaning": "The Sun"
+},
+{
+"n": 50,
+"surah": 91,
+"from": 11,
+"to": 15,
+"name": "Ash-Shams",
+"meaning": "The Sun"
+},
+{
+"n": 51,
+"surah": 90,
+"from": 1,
+"to": 5,
+"name": "Al-Balad",
+"meaning": "The City"
+},
+{
+"n": 52,
+"surah": 90,
+"from": 6,
+"to": 10,
+"name": "Al-Balad",
+"meaning": "The City"
+},
+{
+"n": 53,
+"surah": 90,
+"from": 11,
+"to": 15,
+"name": "Al-Balad",
+"meaning": "The City"
+},
+{
+"n": 54,
+"surah": 90,
+"from": 16,
+"to": 20,
+"name": "Al-Balad",
+"meaning": "The City"
+},
+{
+"n": 55,
+"surah": 89,
+"from": 1,
+"to": 4,
+"name": "Al-Fajr",
+"meaning": "The Dawn"
+},
+{
+"n": 56,
+"surah": 89,
+"from": 5,
+"to": 8,
+"name": "Al-Fajr",
+"meaning": "The Dawn"
+},
+{
+"n": 57,
+"surah": 89,
+"from": 9,
+"to": 11,
+"name": "Al-Fajr",
+"meaning": "The Dawn"
+},
+{
+"n": 58,
+"surah": 89,
+"from": 12,
+"to": 15,
+"name": "Al-Fajr",
+"meaning": "The Dawn"
+},
+{
+"n": 59,
+"surah": 89,
+"from": 16,
+"to": 19,
+"name": "Al-Fajr",
+"meaning": "The Dawn"
+},
+{
+"n": 60,
+"surah": 89,
+"from": 20,
+"to": 22,
+"name": "Al-Fajr",
+"meaning": "The Dawn"
+},
+{
+"n": 61,
+"surah": 89,
+"from": 23,
+"to": 26,
+"name": "Al-Fajr",
+"meaning": "The Dawn"
+},
+{
+"n": 62,
+"surah": 89,
+"from": 27,
+"to": 30,
+"name": "Al-Fajr",
+"meaning": "The Dawn"
+},
+{
+"n": 63,
+"surah": 88,
+"from": 1,
+"to": 4,
+"name": "Al-Ghaashiya",
+"meaning": "The Overwhelming"
+},
+{
+"n": 64,
+"surah": 88,
+"from": 5,
+"to": 9,
+"name": "Al-Ghaashiya",
+"meaning": "The Overwhelming"
+},
+{
+"n": 65,
+"surah": 88,
+"from": 10,
+"to": 13,
+"name": "Al-Ghaashiya",
+"meaning": "The Overwhelming"
+},
+{
+"n": 66,
+"surah": 88,
+"from": 14,
+"to": 17,
+"name": "Al-Ghaashiya",
+"meaning": "The Overwhelming"
+},
+{
+"n": 67,
+"surah": 88,
+"from": 18,
+"to": 22,
+"name": "Al-Ghaashiya",
+"meaning": "The Overwhelming"
+},
+{
+"n": 68,
+"surah": 88,
+"from": 23,
+"to": 26,
+"name": "Al-Ghaashiya",
+"meaning": "The Overwhelming"
+},
+{
+"n": 69,
+"surah": 87,
+"from": 1,
+"to": 5,
+"name": "Al-A'laa",
+"meaning": "The Most High"
+},
+{
+"n": 70,
+"surah": 87,
+"from": 6,
+"to": 10,
+"name": "Al-A'laa",
+"meaning": "The Most High"
+},
+{
+"n": 71,
+"surah": 87,
+"from": 11,
+"to": 14,
+"name": "Al-A'laa",
+"meaning": "The Most High"
+},
+{
+"n": 72,
+"surah": 87,
+"from": 15,
+"to": 19,
+"name": "Al-A'laa",
+"meaning": "The Most High"
+},
+{
+"n": 73,
+"surah": 86,
+"from": 1,
+"to": 4,
+"name": "At-Taariq",
+"meaning": "The Morning Star"
+},
+{
+"n": 74,
+"surah": 86,
+"from": 5,
+"to": 8,
+"name": "At-Taariq",
+"meaning": "The Morning Star"
+},
+{
+"n": 75,
+"surah": 86,
+"from": 9,
+"to": 13,
+"name": "At-Taariq",
+"meaning": "The Morning Star"
+},
+{
+"n": 76,
+"surah": 86,
+"from": 14,
+"to": 17,
+"name": "At-Taariq",
+"meaning": "The Morning Star"
+},
+{
+"n": 77,
+"surah": 85,
+"from": 1,
+"to": 2,
+"name": "Al-Burooj",
+"meaning": "The Constellations"
+},
+{
+"n": 78,
+"surah": 85,
+"from": 3,
+"to": 4,
+"name": "Al-Burooj",
+"meaning": "The Constellations"
+},
+{
+"n": 79,
+"surah": 85,
+"from": 5,
+"to": 6,
+"name": "Al-Burooj",
+"meaning": "The Constellations"
+},
+{
+"n": 80,
+"surah": 85,
+"from": 7,
+"to": 8,
+"name": "Al-Burooj",
+"meaning": "The Constellations"
+},
+{
+"n": 81,
+"surah": 85,
+"from": 9,
+"to": 10,
+"name": "Al-Burooj",
+"meaning": "The Constellations"
+},
+{
+"n": 82,
+"surah": 85,
+"from": 11,
+"to": 12,
+"name": "Al-Burooj",
+"meaning": "The Constellations"
+},
+{
+"n": 83,
+"surah": 85,
+"from": 13,
+"to": 14,
+"name": "Al-Burooj",
+"meaning": "The Constellations"
+},
+{
+"n": 84,
+"surah": 85,
+"from": 15,
+"to": 16,
+"name": "Al-Burooj",
+"meaning": "The Constellations"
+},
+{
+"n": 85,
+"surah": 85,
+"from": 17,
+"to": 18,
+"name": "Al-Burooj",
+"meaning": "The Constellations"
+},
+{
+"n": 86,
+"surah": 85,
+"from": 19,
+"to": 20,
+"name": "Al-Burooj",
+"meaning": "The Constellations"
+},
+{
+"n": 87,
+"surah": 85,
+"from": 21,
+"to": 22,
+"name": "Al-Burooj",
+"meaning": "The Constellations"
+},
+{
+"n": 88,
+"surah": 84,
+"from": 1,
+"to": 5,
+"name": "Al-Inshiqaaq",
+"meaning": "The Splitting Open"
+},
+{
+"n": 89,
+"surah": 84,
+"from": 6,
+"to": 10,
+"name": "Al-Inshiqaaq",
+"meaning": "The Splitting Open"
+},
+{
+"n": 90,
+"surah": 84,
+"from": 11,
+"to": 15,
+"name": "Al-Inshiqaaq",
+"meaning": "The Splitting Open"
+},
+{
+"n": 91,
+"surah": 84,
+"from": 16,
+"to": 20,
+"name": "Al-Inshiqaaq",
+"meaning": "The Splitting Open"
+},
+{
+"n": 92,
+"surah": 84,
+"from": 21,
+"to": 25,
+"name": "Al-Inshiqaaq",
+"meaning": "The Splitting Open"
+},
+{
+"n": 93,
+"surah": 83,
+"from": 1,
+"to": 4,
+"name": "Al-Mutaffifin",
+"meaning": "Defrauding"
+},
+{
+"n": 94,
+"surah": 83,
+"from": 5,
+"to": 8,
+"name": "Al-Mutaffifin",
+"meaning": "Defrauding"
+},
+{
+"n": 95,
+"surah": 83,
+"from": 9,
+"to": 12,
+"name": "Al-Mutaffifin",
+"meaning": "Defrauding"
+},
+{
+"n": 96,
+"surah": 83,
+"from": 13,
+"to": 16,
+"name": "Al-Mutaffifin",
+"meaning": "Defrauding"
+},
+{
+"n": 97,
+"surah": 83,
+"from": 17,
+"to": 20,
+"name": "Al-Mutaffifin",
+"meaning": "Defrauding"
+},
+{
+"n": 98,
+"surah": 83,
+"from": 21,
+"to": 24,
+"name": "Al-Mutaffifin",
+"meaning": "Defrauding"
+},
+{
+"n": 99,
+"surah": 83,
+"from": 25,
+"to": 28,
+"name": "Al-Mutaffifin",
+"meaning": "Defrauding"
+},
+{
+"n": 100,
+"surah": 83,
+"from": 29,
+"to": 32,
+"name": "Al-Mutaffifin",
+"meaning": "Defrauding"
+},
+{
+"n": 101,
+"surah": 83,
+"from": 33,
+"to": 36,
+"name": "Al-Mutaffifin",
+"meaning": "Defrauding"
+},
+{
+"n": 102,
+"surah": 82,
+"from": 1,
+"to": 5,
+"name": "Al-Infitaar",
+"meaning": "The Cleaving"
+},
+{
+"n": 103,
+"surah": 82,
+"from": 6,
+"to": 10,
+"name": "Al-Infitaar",
+"meaning": "The Cleaving"
+},
+{
+"n": 104,
+"surah": 82,
+"from": 11,
+"to": 14,
+"name": "Al-Infitaar",
+"meaning": "The Cleaving"
+},
+{
+"n": 105,
+"surah": 82,
+"from": 15,
+"to": 19,
+"name": "Al-Infitaar",
+"meaning": "The Cleaving"
+},
+{
+"n": 106,
+"surah": 81,
+"from": 1,
+"to": 5,
+"name": "At-Takwir",
+"meaning": "The Overthrowing"
+},
+{
+"n": 107,
+"surah": 81,
+"from": 6,
+"to": 10,
+"name": "At-Takwir",
+"meaning": "The Overthrowing"
+},
+{
+"n": 108,
+"surah": 81,
+"from": 11,
+"to": 14,
+"name": "At-Takwir",
+"meaning": "The Overthrowing"
+},
+{
+"n": 109,
+"surah": 81,
+"from": 15,
+"to": 19,
+"name": "At-Takwir",
+"meaning": "The Overthrowing"
+},
+{
+"n": 110,
+"surah": 81,
+"from": 20,
+"to": 24,
+"name": "At-Takwir",
+"meaning": "The Overthrowing"
+},
+{
+"n": 111,
+"surah": 81,
+"from": 25,
+"to": 29,
+"name": "At-Takwir",
+"meaning": "The Overthrowing"
+},
+{
+"n": 112,
+"surah": 80,
+"from": 1,
+"to": 5,
+"name": "Abasa",
+"meaning": "He frowned"
+},
+{
+"n": 113,
+"surah": 80,
+"from": 6,
+"to": 9,
+"name": "Abasa",
+"meaning": "He frowned"
+},
+{
+"n": 114,
+"surah": 80,
+"from": 10,
+"to": 14,
+"name": "Abasa",
+"meaning": "He frowned"
+},
+{
+"n": 115,
+"surah": 80,
+"from": 15,
+"to": 19,
+"name": "Abasa",
+"meaning": "He frowned"
+},
+{
+"n": 116,
+"surah": 80,
+"from": 20,
+"to": 23,
+"name": "Abasa",
+"meaning": "He frowned"
+},
+{
+"n": 117,
+"surah": 80,
+"from": 24,
+"to": 28,
+"name": "Abasa",
+"meaning": "He frowned"
+},
+{
+"n": 118,
+"surah": 80,
+"from": 29,
+"to": 33,
+"name": "Abasa",
+"meaning": "He frowned"
+},
+{
+"n": 119,
+"surah": 80,
+"from": 34,
+"to": 37,
+"name": "Abasa",
+"meaning": "He frowned"
+},
+{
+"n": 120,
+"surah": 80,
+"from": 38,
+"to": 42,
+"name": "Abasa",
+"meaning": "He frowned"
+},
+{
+"n": 121,
+"surah": 79,
+"from": 1,
+"to": 5,
+"name": "An-Naazi'aat",
+"meaning": "Those who drag forth"
+},
+{
+"n": 122,
+"surah": 79,
+"from": 6,
+"to": 9,
+"name": "An-Naazi'aat",
+"meaning": "Those who drag forth"
+},
+{
+"n": 123,
+"surah": 79,
+"from": 10,
+"to": 14,
+"name": "An-Naazi'aat",
+"meaning": "Those who drag forth"
+},
+{
+"n": 124,
+"surah": 79,
+"from": 15,
+"to": 18,
+"name": "An-Naazi'aat",
+"meaning": "Those who drag forth"
+},
+{
+"n": 125,
+"surah": 79,
+"from": 19,
+"to": 23,
+"name": "An-Naazi'aat",
+"meaning": "Those who drag forth"
+},
+{
+"n": 126,
+"surah": 79,
+"from": 24,
+"to": 28,
+"name": "An-Naazi'aat",
+"meaning": "Those who drag forth"
+},
+{
+"n": 127,
+"surah": 79,
+"from": 29,
+"to": 32,
+"name": "An-Naazi'aat",
+"meaning": "Those who drag forth"
+},
+{
+"n": 128,
+"surah": 79,
+"from": 33,
+"to": 37,
+"name": "An-Naazi'aat",
+"meaning": "Those who drag forth"
+},
+{
+"n": 129,
+"surah": 79,
+"from": 38,
+"to": 41,
+"name": "An-Naazi'aat",
+"meaning": "Those who drag forth"
+},
+{
+"n": 130,
+"surah": 79,
+"from": 42,
+"to": 46,
+"name": "An-Naazi'aat",
+"meaning": "Those who drag forth"
+},
+{
+"n": 131,
+"surah": 78,
+"from": 1,
+"to": 2,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 132,
+"surah": 78,
+"from": 3,
+"to": 5,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 133,
+"surah": 78,
+"from": 6,
+"to": 8,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 134,
+"surah": 78,
+"from": 9,
+"to": 10,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 135,
+"surah": 78,
+"from": 11,
+"to": 12,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 136,
+"surah": 78,
+"from": 13,
+"to": 15,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 137,
+"surah": 78,
+"from": 16,
+"to": 18,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 138,
+"surah": 78,
+"from": 19,
+"to": 20,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 139,
+"surah": 78,
+"from": 21,
+"to": 22,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 140,
+"surah": 78,
+"from": 23,
+"to": 25,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 141,
+"surah": 78,
+"from": 26,
+"to": 28,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 142,
+"surah": 78,
+"from": 29,
+"to": 30,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 143,
+"surah": 78,
+"from": 31,
+"to": 32,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 144,
+"surah": 78,
+"from": 33,
+"to": 35,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 145,
+"surah": 78,
+"from": 36,
+"to": 38,
+"name": "An-Naba",
+"meaning": "The Announcement"
+},
+{
+"n": 146,
+"surah": 78,
+"from": 39,
+"to": 40,
+"name": "An-Naba",
+"meaning": "The Announcement"
+}
+]

@@ -1,75 +1,86 @@
-# Daily card: Qur'an × Bible, through a Lutheran lens
+# Daily Qur'an card: how to write one
 
-One card a day. Each card pairs a Qur'an passage with its biblical (or other late antique)
-parallel, says plainly **where they meet or part**, explains how **academic scholarship**
-accounts for the relationship, and how the **Lutheran tradition** reads the biblical side.
+The cards read through the Qur'an **in order**, a few verses a day, starting with Al-Fatiha and
+then the short surahs of Juz' Amma from 114 back to 78 (`data/plan.json`, 146 readings).
+Each card teaches **one Arabic root**, explains the passage from an **academic angle**, and,
+when there is one, compares it with a **Bible parallel** and the **Lutheran** reading of it.
 
-Write `cards/YYYY-MM-DD.json` (Jakarta date), render it to check it, then commit and push to
+- **Monday–Saturday**: a reading card (`type: "reading"`).
+- **Sunday**: a weekly recap card (`type: "recap"`), built automatically from the week's cards.
+
+Write `cards/YYYY-MM-DD.json` (Jakarta date), render it to check, then commit and push to
 `main`. The GitHub Action renders the PNG and sends it to Telegram.
-`examples/adam-forgiven.json` is a model card.
+`examples/reading-1-fatiha.json` is a model reading card.
 
-## 1. Pick the pairing
+## Sunday: recap
 
-Take the next unused row of `TOPICS.md` (lowest `#` not yet used as `topic` in `cards/`).
-You may swap in a news hook instead **only** when today's news connects naturally to a
-pairing (e.g. a manuscript find, an archaeology story, Ramadan or Easter, a flood for Noah).
-Then set `tag` to `news`, keep the Bible parallel, and use one sentence of the body for the news.
+Write only:
+```json
+{"type": "recap", "date": "YYYY-MM-DD"}
+```
+Optionally add `"question"` (≤ 24 words): a short prompt that links the week's passages.
+If there were no reading cards in the past 6 days, skip the recap and write a reading card instead.
 
-## 2. What the body must do (≤ 70 words, aim 55–65)
+## Monday–Saturday: reading
 
-In this order, briefly:
-1. **What the two texts share** and **where they differ**, concretely (one detail each).
-2. **The scholarly explanation**: e.g. the Qur'an reworking biblical or post-biblical
-   traditions (midrash, Syriac Christian homilies, infancy gospels), Arabic word history,
-   dating, or a debate between named scholars or early interpreters.
-3. **The Lutheran reading** of the biblical side, when there is a real one: Luther's own
-   writings (lectures on Genesis, Small and Large Catechism, prefaces to the Bible, On
-   Secular Authority), the Augsburg Confession / Book of Concord, or core Lutheran themes
-   (sola scriptura, sola gratia/fide, law and gospel, theology of the cross, original sin,
-   Christ as the centre of Scripture). Also fair game: Lutheran-rooted historical criticism
-   (Wellhausen, Gunkel, Bultmann) and the fact that Luther wrote a preface to Bibliander's
-   1543 Latin Qur'an.
+1. Run `python3 scripts/passage.py`. It prints the next reading with every Arabic word
+   numbered, plus the roots taught so far. Never type Arabic verse text yourself.
+2. **Root.** Pick one root that appears in the passage. Prefer a new, common, useful root
+   (high frequency in the Qur'an, or key to this passage). About one card in five, choose a
+   root already taught (a review); the card marks it automatically. Point to the word by
+   `verse` and `index` (the numbers from passage.py).
+3. **Academic angle (the body).** One concrete thing scholars discuss about this passage:
+   - word history (Aramaic/Syriac/Ethiopic/South Arabian links), e.g. Jeffery, *Foreign Vocabulary*; Sinai, *Key Terms of the Qur'an*
+   - early interpreters disagreeing (al-Tabari, Ibn Kathir, Ibn Abbas, Ibn Mas'ud)
+   - dating and structure (Nöldeke's chronology, Neuwirth, Sinai), rhyme and form
+   - historical context of late antique Arabia (inscriptions, Himyar, Byzantium, Persia)
+   - manuscripts and readings (Birmingham, Sana'a, qira'at), van Putten, Sadeghi
+4. **Bible parallel, if any.** If a real biblical (or other late antique) parallel exists, add
+   it with a `relation`, and say in the body how Lutherans read the biblical side when
+   there is a real Lutheran angle: Luther's own writings (Small and Large Catechism, lectures
+   on Genesis, prefaces), the Augsburg Confession and Book of Concord, or core themes
+   (sola scriptura, grace and faith, law and gospel, theology of the cross, original sin).
+   Many passages have no real parallel. Then leave it out; never force one.
+5. **News, if any.** Add `news` only when today's news connects naturally to this passage.
+   Never as commentary on a tragedy, war or election.
 
-Mark 2–3 key phrases with `**bold**`.
+Fairness and accuracy:
+- Describe, don't adjudicate. Never say which scripture is right or superior.
+- Present scholarly debates as debates and name the source.
+- Verify every claim (WebSearch/WebFetch) before using it. If you can't verify it, choose another angle.
 
-## 3. Rules for fairness and accuracy
-
-- Describe, don't adjudicate. Never say which scripture is right, corrupted, or superior.
-  Give each tradition's self-understanding in its own terms.
-- Luther's polemical writings about Islam ("the Turk") may be mentioned as history, plainly
-  labelled, never adopted.
-- Present scholarly debates as debates. Name the source (Reynolds, Sinai, Neuwirth,
-  Griffith, Zellentin, Witztum, el-Badawi, van Putten; al-Tabari, Ibn Kathir; Luther, Book of Concord).
-- Only state what you have verified. If an angle in `TOPICS.md` can't be verified, change it.
-- No forced links to current tragedies, wars or elections.
-
-## 4. Fields
+## Reading card fields
 
 | field | rules |
 |---|---|
-| `topic` | the `#` from TOPICS.md |
+| `type` | `"reading"` |
 | `date` | `YYYY-MM-DD` (Asia/Jakarta) |
-| `tag` | `bible` (default) or `news` |
-| `relation` | `aligns` (Where they meet), `differs` (Where they part), `retells` (Same story, retold) |
+| `plan` | reading number from passage.py |
 | `title` | ≤ 9 words, sentence case |
-| `verses` | Qur'an `S:A` or `S:A-B`, max 4 verses. Arabic is pulled automatically from `data/quran-uthmani.json`; never type Arabic |
-| `translation` | ≤ 40 words, your own plain English rendering of the Qur'an verses |
-| `bible` | Bible ref like `Genesis 3:7` or `Matt 19:23-24`, max 3 verses. Text is pulled from `data/bible-asv.json` (ASV 1901) |
-| `parallel_label` + `parallel_text` | instead of `bible`, for non-biblical texts (e.g. `Infancy Gospel of Thomas 2`); `parallel_text` ≤ 35 words, your own paraphrase |
-| `body` | ≤ 70 words, see section 2 |
-| `question` | ≤ 24 words, one open question comparing the two texts |
+| `translation` | ≤ 60 words, your own plain English rendering of the whole passage |
+| `root.letters` | the root letters in Arabic separated by spaces, e.g. `"ر ح م"` |
+| `root.translit` | e.g. `"r-ḥ-m"` (use the same spelling every time a root returns) |
+| `root.meaning` | core meaning, ≤ 4 words |
+| `root.verse`, `root.index` | position of the word in the passage, from passage.py |
+| `root.word_translit`, `root.word_meaning` | that word, e.g. `"al-raḥmān"`, `"the Most Merciful"` |
+| `body` | ≤ 60 words; the academic angle, plus the Lutheran reading if there's a parallel. Mark 2–3 phrases with `**bold**` |
+| `bible` + `relation` | optional. Bible ref like `Matthew 6:9-10` (max 3 verses; text comes from ASV automatically). `relation`: `aligns`, `differs`, `retells`, or `echo` |
+| `parallel_label` + `parallel_text` + `relation` | instead of `bible`, for non-biblical texts (Mishnah, infancy gospels, Syriac legends); text ≤ 35 words, your paraphrase |
+| `news` | optional `{"text": "≤ 22 words", "url": "https://..."}` |
+| `question` | ≤ 24 words, one open question that sends the reader back to the text |
 | `source_label` | short: the key scholarly / Lutheran source(s) |
-| `source_url` | optional https link (a primary text, e.g. bookofconcord.org, or the news story) |
+| `source_url` | optional https link to a primary or scholarly source |
 | `reading` | optional: one book or article to go deeper |
 
 Use curly quotes (“ ” ’) inside text so the JSON stays valid.
 
-## 5. Check, then publish
+## Check, then publish
 
 ```
 pip install playwright --break-system-packages   # if needed
 python3 scripts/render.py cards/YYYY-MM-DD.json /tmp/card.png
 ```
-Look at the PNG: nothing cut off, Arabic and Bible text match the references, ≤ 1750px tall.
+The renderer refuses bad references, a root that doesn't fit the chosen word, and text that's
+too long. Look at the PNG: nothing cut off, highlighted word correct, ≤ 1900px tall.
 Then `git add cards/YYYY-MM-DD.json && git commit -m "Card YYYY-MM-DD" && git push`.
 Don't commit the PNG.

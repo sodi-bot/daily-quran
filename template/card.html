@@ -9,58 +9,63 @@
   @font-face { font-family: "Inter"; src: url("../fonts/Inter-Bold.otf"); font-weight: 700; }
   @font-face { font-family: "Inter"; src: url("../fonts/Inter-ExtraBold.otf"); font-weight: 800; }
   @font-face { font-family: "AmiriQuran"; src: url("../fonts/AmiriQuran.ttf"); }
-  @font-face { font-family: "Amiri"; src: url("../fonts/Amiri-Regular.ttf"); }
+  @font-face { font-family: "Amiri"; src: url("../fonts/Amiri-Regular.ttf"); font-weight: 400; }
+  @font-face { font-family: "Amiri"; src: url("../fonts/Amiri-Bold.ttf"); font-weight: 700; }
 
   :root {
-    --bg: #F4F0E6;
-    --ink: #1F2A24;
-    --muted: #4A544E;
-    --faint: #8A918C;
-    --accent: #5B9E8C;      /* Qur'an side */
-    --accent-soft: #DDE7E1;
-    --warm: #B07A3E;        /* Bible side */
-    --warm-soft: #F1E6D6;
+    --bg: #F4F0E6; --ink: #1F2A24; --muted: #4A544E; --faint: #8A918C;
+    --accent: #5B9E8C; --accent-soft: #DDE7E1; --accent-ink: #2F6E5E;
+    --warm: #B07A3E; --warm-soft: #F1E6D6;
     --hl: #D7E6DF;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 1080px; background: var(--bg); }
   body { font-family: "Inter", sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .hide { display: none !important; }
 
-  .card {
-    position: relative; width: 1080px; min-height: 1350px;
-    padding: 72px 84px 60px 128px; overflow: hidden;
-    display: flex; flex-direction: column;
-  }
-  .strip { position: absolute; left: 0; top: 0; bottom: 0; width: 40px;
-           background: linear-gradient(var(--accent) 0 50%, var(--warm) 50% 100%); }
+  .card { position: relative; width: 1080px; min-height: 1350px; padding: 72px 84px 60px 128px; overflow: hidden; display: flex; flex-direction: column; }
+  .strip { position: absolute; left: 0; top: 0; bottom: 0; width: 40px; background: var(--accent); }
   .blob { position: absolute; right: -150px; top: -190px; width: 480px; height: 480px; border-radius: 50%; background: var(--accent-soft); }
 
   .top { position: relative; display: flex; justify-content: space-between; align-items: center; }
-  .pill { background: var(--accent); color: #fff; font-weight: 600; font-size: 30px; padding: 12px 28px; border-radius: 999px; }
+  .pill { background: var(--accent); color: #fff; font-weight: 600; font-size: 28px; padding: 12px 28px; border-radius: 999px; }
   .day { font-weight: 600; font-size: 28px; letter-spacing: 3px; color: var(--muted); }
 
-  .rel { position: relative; margin-top: 52px; font-size: 24px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--warm); }
-  h1 { position: relative; margin-top: 12px; font-weight: 800; font-size: 60px; line-height: 1.1; letter-spacing: -1.5px; }
+  .over { position: relative; margin-top: 40px; font-size: 24px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-ink); }
+  h1 { position: relative; margin-top: 10px; font-weight: 800; font-size: 60px; line-height: 1.1; letter-spacing: -1.5px; }
 
-  .side { position: relative; margin-top: 30px; padding: 24px 34px 22px; border-radius: 22px; }
-  .side.q { margin-top: 36px; background: rgba(255,255,255,.6); border-left: 8px solid var(--accent); }
-  .side.b { margin-top: 16px; background: var(--warm-soft); border-left: 8px solid var(--warm); }
-  .ar { font-family: "AmiriQuran", "Amiri", serif; direction: rtl; text-align: right; font-size: 44px; line-height: 1.9; color: var(--ink); }
-  .ar .n { font-size: 32px; color: var(--accent); }
-  .tr { margin-top: 8px; font-size: 27px; line-height: 1.45; font-style: italic; color: var(--muted); }
-  .bt { font-size: 28px; line-height: 1.45; font-style: italic; color: #4B3F31; }
-  .ref { margin-top: 12px; font-size: 23px; font-weight: 600; letter-spacing: .4px; }
-  .side.q .ref { color: var(--accent); }
-  .side.b .ref { color: var(--warm); }
+  .verse { position: relative; margin-top: 28px; padding: 24px 34px 22px; background: rgba(255,255,255,.6); border-radius: 22px; }
+  .ar { font-family: "AmiriQuran", "Amiri", serif; direction: rtl; text-align: right; font-size: 42px; line-height: 1.85; color: var(--ink); }
+  .ar .bas { text-align: center; font-size: 34px; color: var(--faint); line-height: 1.6; }
+  .ar .n { font-size: 30px; color: var(--accent); }
+  .ar .hw { color: var(--accent-ink); background: var(--hl); border-radius: 10px; padding: 0 6px; }
+  .tr { margin-top: 6px; font-size: 26px; line-height: 1.45; font-style: italic; color: var(--muted); }
+  .ref { margin-top: 12px; font-size: 23px; font-weight: 600; letter-spacing: .4px; color: var(--accent); }
 
-  .body { position: relative; margin-top: 34px; font-size: 31px; line-height: 1.48; color: #2E3832; }
+  .root { position: relative; margin-top: 18px; display: flex; align-items: center; gap: 30px; padding: 20px 30px; border: 3px solid var(--accent-soft); border-radius: 22px; }
+  .letters { display: flex; gap: 24px; justify-content: center; font-family: "Amiri", serif; font-weight: 700; font-size: 66px; line-height: 1; color: var(--accent-ink); direction: rtl; white-space: nowrap; min-width: 150px; text-align: center; }
+  .rinfo { flex: 1; }
+  .rhead { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .rt { font-size: 30px; font-weight: 700; }
+  .rt span { font-weight: 400; color: var(--muted); }
+  .badge { font-size: 20px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+  .rw { margin-top: 6px; font-size: 25px; color: var(--muted); line-height: 1.35; }
+  .rw b { color: var(--ink); font-weight: 600; }
+
+  .bible { position: relative; margin-top: 18px; padding: 20px 32px 20px; background: var(--warm-soft); border-left: 8px solid var(--warm); border-radius: 22px; }
+  .rel { font-size: 21px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--warm); }
+  .bt { margin-top: 8px; font-size: 26px; line-height: 1.45; font-style: italic; color: #4B3F31; }
+  .bref { margin-top: 8px; font-size: 21px; font-weight: 600; color: var(--warm); }
+
+  .body { position: relative; margin-top: 26px; font-size: 29px; line-height: 1.48; color: #2E3832; }
   .body b { font-weight: 700; color: var(--ink); background: linear-gradient(transparent 62%, var(--hl) 62%); }
 
-  .spacer { flex: 1; min-height: 34px; }
+  .news { position: relative; margin-top: 20px; font-size: 24px; line-height: 1.4; color: var(--muted); }
+  .news b { color: var(--accent-ink); letter-spacing: 1.5px; font-size: 20px; text-transform: uppercase; margin-right: 8px; }
 
-  .ask { position: relative; border-left: 6px solid var(--warm); padding: 6px 0 6px 32px; font-size: 30px; font-weight: 700; line-height: 1.4; }
-
-  .foot { position: relative; margin-top: 38px; display: flex; justify-content: space-between; gap: 40px; font-size: 21px; color: var(--faint); }
+  .spacer { flex: 1; min-height: 30px; }
+  .ask { position: relative; border-left: 6px solid var(--accent); padding: 6px 0 6px 32px; font-size: 30px; font-weight: 700; line-height: 1.4; }
+  .foot { position: relative; margin-top: 36px; display: flex; justify-content: space-between; gap: 40px; font-size: 21px; color: var(--faint); }
 </style>
 </head>
 <body>
@@ -68,18 +73,27 @@
   <div class="strip"></div>
   <div class="blob"></div>
   <div class="top"><span class="pill" id="tag"></span><span class="day" id="day"></span></div>
-  <div class="rel" id="relation"></div>
+  <div class="over" id="over"></div>
   <h1 id="title"></h1>
-  <div class="side q">
+  <div class="verse">
     <div class="ar" id="arabic"></div>
     <div class="tr" id="translation"></div>
     <div class="ref" id="ref"></div>
   </div>
-  <div class="side b">
+  <div class="root">
+    <div class="letters" id="letters"></div>
+    <div class="rinfo">
+      <div class="rhead"><div class="rt" id="rt"></div><div class="badge" id="badge"></div></div>
+      <div class="rw" id="rw"></div>
+    </div>
+  </div>
+  <div class="bible" id="bible">
+    <div class="rel" id="relation"></div>
     <div class="bt" id="ptext"></div>
-    <div class="ref" id="pref"></div>
+    <div class="bref" id="pref"></div>
   </div>
   <div class="body" id="body"></div>
+  <div class="news" id="news"></div>
   <div class="spacer"></div>
   <div class="ask" id="question"></div>
   <div class="foot"><span id="source"></span><span id="date"></span></div>

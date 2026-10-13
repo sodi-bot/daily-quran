@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Inter"; src: url("../fonts/Inter-Regular.otf"); font-weight: 400; }
+  @font-face { font-family: "Inter"; src: url("../fonts/Inter-Medium.otf"); font-weight: 500; }
+  @font-face { font-family: "Inter"; src: url("../fonts/Inter-SemiBold.otf"); font-weight: 600; }
+  @font-face { font-family: "Inter"; src: url("../fonts/Inter-Bold.otf"); font-weight: 700; }
+  @font-face { font-family: "Inter"; src: url("../fonts/Inter-ExtraBold.otf"); font-weight: 800; }
+  @font-face { font-family: "Amiri"; src: url("../fonts/Amiri-Bold.ttf"); font-weight: 700; }
+
+  :root { --bg: #F4F0E6; --ink: #1F2A24; --muted: #4A544E; --faint: #8A918C;
+          --accent: #5B9E8C; --accent-soft: #DDE7E1; --accent-ink: #2F6E5E; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; background: var(--bg); }
+  body { font-family: "Inter", sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+  .card { position: relative; width: 1080px; min-height: 1350px; padding: 72px 84px 60px 128px; overflow: hidden; display: flex; flex-direction: column; }
+  .strip { position: absolute; left: 0; top: 0; bottom: 0; width: 40px; background: var(--accent); }
+  .blob { position: absolute; right: -150px; top: -190px; width: 480px; height: 480px; border-radius: 50%; background: var(--accent-soft); }
+  .top { position: relative; display: flex; justify-content: space-between; align-items: center; }
+  .pill { background: var(--accent); color: #fff; font-weight: 600; font-size: 28px; padding: 12px 28px; border-radius: 999px; }
+  .day { font-weight: 600; font-size: 28px; letter-spacing: 3px; color: var(--muted); }
+
+  h1 { position: relative; margin-top: 60px; font-weight: 800; font-size: 62px; line-height: 1.1; letter-spacing: -1.5px; }
+  .sub { position: relative; margin-top: 14px; font-size: 30px; color: var(--muted); }
+
+  h2 { position: relative; margin-top: 46px; font-size: 24px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-ink); }
+  .list { position: relative; margin-top: 14px; }
+  .item { display: flex; gap: 22px; padding: 14px 0; border-bottom: 2px solid var(--accent-soft); font-size: 29px; line-height: 1.35; }
+  .item .r { font-weight: 700; color: var(--accent); min-width: 190px; }
+
+  .roots { position: relative; margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .rt { background: rgba(255,255,255,.6); border-radius: 20px; padding: 22px 26px; display: flex; align-items: center; gap: 22px; }
+  .rt .l { display: flex; gap: 14px; justify-content: center; font-family: "Amiri", serif; font-weight: 700; font-size: 56px; line-height: 1; color: var(--accent-ink); direction: rtl; white-space: nowrap; }
+  .rt .t { font-size: 28px; font-weight: 700; }
+  .rt .w { font-size: 22px; color: var(--muted); margin-top: 4px; }
+
+  .spacer { flex: 1; min-height: 36px; }
+  .ask { position: relative; border-left: 6px solid var(--accent); padding: 6px 0 6px 32px; font-size: 30px; font-weight: 700; line-height: 1.4; }
+  .foot { position: relative; margin-top: 36px; display: flex; justify-content: space-between; font-size: 21px; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="strip"></div>
+  <div class="blob"></div>
+  <div class="top"><span class="pill">Weekly recap</span><span class="day" id="day"></span></div>
+  <h1 id="title"></h1>
+  <div class="sub" id="sub"></div>
+  <h2>Passages</h2>
+  <div class="list" id="passages"></div>
+  <h2>Roots: say the meaning, then check the caption</h2>
+  <div class="roots" id="roots"></div>
+  <div class="spacer"></div>
+  <div class="ask" id="question"></div>
+  <div class="foot"><span id="progress"></span><span id="date"></span></div>
+</div>
+</body>
+</html>
