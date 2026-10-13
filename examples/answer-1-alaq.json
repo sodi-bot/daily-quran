@@ -1,0 +1,27 @@
+{
+  "type": "answer",
+  "date": "2026-10-15",
+  "answers": "2026-10-14",
+  "title": "Recitation spreads by being heard",
+  "phrase": {
+    "verse": 1,
+    "from": 1,
+    "to": 3,
+    "translit": "iqraʾ bi-smi rabbika",
+    "meaning": "recite in the name of your Lord"
+  },
+  "points": [
+    {
+      "label": "What research comes close",
+      "text": "**William Graham** argues the Qur'an was first an **oral scripture**, known by being recited and heard. Muslim tradition places Surah 74 second, where the command turns public: “Arise and warn”.",
+      "who": "Graham, Beyond the Written Word (1987)"
+    },
+    {
+      "label": "One possible reading",
+      "text": "A message that starts as words to recite travels through **voices and memory**. People learn the words before they decide about them, so belief can grow out of hearing rather than come first."
+    }
+  ],
+  "bottom_text": "This is one reading, not a consensus. Uri Rubin's view points the other way: iqraʾ as an act of worship, inward before outward.",
+  "source_label": "Graham (1987) · Al-Muddaththir, place in revelation order",
+  "source_url": "https://en.wikipedia.org/wiki/Al-Muddaththir"
+}

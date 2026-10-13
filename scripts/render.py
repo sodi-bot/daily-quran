@@ -292,6 +292,82 @@ def recap_data(card):
     return "recap.html", d
 
 
+def find_card(date):
+    for d in (CARDS, ROOT / "examples"):
+        for f in sorted(d.glob("*.json")):
+            try:
+                c = json.loads(f.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            if c.get("type") == "reading" and c.get("date") == date:
+                return c
+    fail(f"no reading card dated {date} to answer")
+
+
+ANSWER_LIMITS = {"title": 9, "point_label": 5, "point_text": 45, "point_who": 10, "bottom_text": 32}
+OWN_LABELS = ("one possible reading", "a possible reading")
+
+
+def answer_data(card):
+    for k in ["date", "answers", "title", "phrase", "points", "bottom_text", "source_label", "source_url"]:
+        if not card.get(k):
+            fail(f"answer card missing {k}")
+    if not str(card["source_url"]).startswith("https://"):
+        fail("source_url must be an https link")
+    q = find_card(card["answers"])
+    qtype = q.get("question_type")
+    p = card_passage(q)
+    pts = card["points"]
+    if not 2 <= len(pts) <= 3:
+        fail("points: give 2 or 3")
+    for x in pts:
+        for k, n in (("label", "point_label"), ("text", "point_text"), ("who", "point_who")):
+            if words(x.get(k)) > ANSWER_LIMITS[n]:
+                fail(f"point {k} has {words(x.get(k))} words; limit {ANSWER_LIMITS[n]}")
+        if not x.get("label") or not x.get("text"):
+            fail("each point needs label and text")
+    if qtype == "open" and not any(x["label"].lower() in OWN_LABELS for x in pts):
+        fail("answers to open questions need a point labelled 'One possible reading'")
+    for k in ("title", "bottom_text"):
+        if words(card[k]) > ANSWER_LIMITS[k]:
+            fail(f"{k} has {words(card[k])} words; limit {ANSWER_LIMITS[k]}")
+    ph = card["phrase"]
+    v, a, b = int(ph["verse"]), int(ph["from"]), int(ph.get("to", ph["from"]))
+    if not p["from"] <= v <= p["to"]:
+        fail(f"phrase.verse {v} is outside the passage {p['from']}-{p['to']}")
+    toks = QURAN[str(p["surah"])][str(v)].split(" ")
+    if not 1 <= a <= b <= len(toks) or b - a > 4:
+        fail(f"phrase words {a}-{b} invalid; verse {v} has {len(toks)} words (max 5)")
+    for k in ("translit", "meaning"):
+        if not ph.get(k):
+            fail(f"phrase missing {k}")
+    items = []
+    for x in pts:
+        own = " own" if x["label"].lower() in OWN_LABELS else ""
+        who = f'<div class="pw">{html.escape(x["who"])}</div>' if x.get("who") else ""
+        items.append(f'<div class="pt-item{own}"><div class="pl">{html.escape(x["label"])}</div>'
+                     f'<div class="px">{rich(x["text"])}</div>{who}</div>')
+    r = q["root"]
+    return "answer.html", {
+        "tag": f"Answer · reading {q['plan']}",
+        "day": dt.date.fromisoformat(card["date"]).strftime("%a").upper(),
+        "over": html.escape(("Scholars debate" if qtype == "debate" else "Open question") + f" · {p['surah']}:{p['from']}" + (f"–{p['to']}" if p["to"] > p["from"] else "")),
+        "asked": "“" + html.escape(q["question"]) + "”",
+        "title": html.escape(card["title"]),
+        "phrase_ar": html.escape(" ".join(toks[a - 1:b])),
+        "phrase_tl": html.escape(ph["translit"]),
+        "phrase_mn": html.escape(ph["meaning"]),
+        "phrase_rf": html.escape(f"Qur'an {p['surah']}:{v}"),
+        "points": "".join(items),
+        "bottom_label": html.escape("Where it stands" if qtype == "debate" else "Weigh it"),
+        "bottom_text": rich(card["bottom_text"]),
+        "review": f'<span>Root review</span><span class="l">{letters_html(r["letters"])}</span><span><b>{html.escape(r["translit"])}</b> · {html.escape(r["meaning"])}</span>',
+        "source": html.escape(card["source_label"]),
+        "date": fmt_date(card["date"]),
+        "_hide": [],
+    }
+
+
 def render(card_path, out_path):
     card = json.loads(pathlib.Path(card_path).read_text(encoding="utf-8"))
     kind = card.get("type")
@@ -299,8 +375,10 @@ def render(card_path, out_path):
         tpl, data = reading_data(card)
     elif kind == "recap":
         tpl, data = recap_data(card)
+    elif kind == "answer":
+        tpl, data = answer_data(card)
     else:
-        fail("type must be 'reading' or 'recap'")
+        fail("type must be 'reading', 'answer' or 'recap'")
     hide = data.pop("_hide")
     arsize = data.pop("_arsize", None)
     from playwright.sync_api import sync_playwright

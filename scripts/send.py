@@ -29,6 +29,8 @@ def caption(card):
             lines.append(f"{e(r['translit'])} · {e(r['word_translit'])} → <tg-spoiler>{e(r['meaning'])} · {e(r['word_meaning'])}</tg-spoiler>")
         return "\n".join(lines)
     lines = []
+    if card.get("type") == "answer":
+        lines.append(f"Answer to the card of {e(card['answers'])}")
     if card.get("source_url"):
         lines.append(f"Source: {e(card['source_url'])}")
     if card.get("news"):

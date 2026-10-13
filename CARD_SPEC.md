@@ -7,12 +7,16 @@ key passage. Each card is labelled with Nöldeke's period (Early, Middle, Late M
 Each card teaches **one Arabic root**, explains the passage from an **academic angle**, and,
 when there is one, compares it with a **Bible parallel** and the **Lutheran** reading of it.
 
-- **Monday–Saturday**: a reading card (`type: "reading"`).
+Which card to write today (Asia/Jakarta):
 - **Sunday**: a weekly recap card (`type: "recap"`), built automatically from the week's cards.
+- **Other days**: if the most recent reading card has no answer card yet (no `answer` whose
+  `answers` is that reading's date), write its **answer card** (`type: "answer"`). Otherwise
+  write the next **reading card** (`type: "reading"`). This gives Reading / Answer / Reading /
+  Answer / Reading / Answer / Recap, and keeps the pairs together if a day is missed.
 
 Write `cards/YYYY-MM-DD.json` (Jakarta date), render it to check, then commit and push to
 `main`. The GitHub Action renders the PNG and sends it to Telegram.
-`examples/reading-1-alaq.json` is a model reading card.
+`examples/reading-1-alaq.json` and `examples/answer-1-alaq.json` are a model reading and its answer.
 
 ## Sunday: recap
 
@@ -23,7 +27,35 @@ Write only:
 Optionally add `"question"` (≤ 24 words): a short prompt that links the week's passages.
 If there were no reading cards in the past 6 days, skip the recap and write a reading card instead.
 
-## Monday–Saturday: reading
+## Answer card
+
+Answers the previous reading card's question. Reread that card first.
+
+- **`debate` question**: summarise the main positions (2–3 points), who holds each, and the
+  evidence. Name a winner only when there is real scholarly consensus; otherwise `bottom_text`
+  says where the evidence leans and what is still open.
+- **`open` question**: one point `What research comes close` (the nearest real scholarship,
+  named), and one point labelled exactly `One possible reading`: a reasoned reading of the
+  wording, argued from the text, never a theological ruling. `bottom_text` gives the strongest
+  counter-view so the reader has something to weigh.
+- Pick the **Arabic phrase** the question turns on (max 5 words) by verse and word numbers
+  from `python3 scripts/passage.py N [S:A-B]`.
+- Verify every claim; `source_url` is required and must support the main point.
+
+| field | rules |
+|---|---|
+| `type` | `"answer"` |
+| `date` | today, `YYYY-MM-DD` |
+| `answers` | date of the reading card being answered |
+| `title` | ≤ 9 words: the answer in a phrase |
+| `phrase` | `{"verse", "from", "to", "translit", "meaning"}`: word numbers in that verse |
+| `points` | 2–3 of `{"label" ≤ 5 words, "text" ≤ 45 words, "who" ≤ 10 words, optional}`; `**bold**` allowed |
+| `bottom_text` | ≤ 32 words. Shown as “Where it stands” (debate) or “Weigh it” (open) |
+| `source_label`, `source_url` | required, as for reading cards |
+
+The card also shows the reading's root again as a review, automatically.
+
+## Reading card
 
 1. Run `python3 scripts/passage.py`. It prints the next reading, plus the roots taught so far.
    Never type Arabic verse text yourself.
