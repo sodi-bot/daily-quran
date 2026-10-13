@@ -80,7 +80,7 @@ Fairness and accuracy:
 | `bible` + `relation` | optional. Bible ref like `Matthew 6:9-10` (max 3 verses; text comes from ASV automatically). `relation`: `aligns`, `differs`, `retells`, or `echo` |
 | `parallel_label` + `parallel_text` + `relation` | instead of `bible`, for non-biblical texts (Mishnah, infancy gospels, Syriac legends); text ≤ 35 words, your paraphrase |
 | `news` | optional `{"text": "≤ 22 words", "url": "https://..."}` |
-| `question` | ≤ 24 words, one open question that sends the reader back to the text |
+| `question` | ≤ 24 words, one open question grounded in a **real scholarly debate** (ideally the one in the body) or in a close look at the wording. Never build in a premise the scholarship doesn't support. If scholars disagree, let the question invite the reader to weigh the options |
 | `source_label` | short: the key scholarly / Lutheran source(s) |
 | `source_url` | **required** https link to the main source behind the body: the scholarly article, book page, inscription record or primary text (e.g. bookofconcord.org). Open it with WebFetch and confirm it supports the claim. Prefer open-access pages over paywalls |
 | `reading` | optional: one book or article to go deeper |
