@@ -1,0 +1,25 @@
+{
+  "type": "reading",
+  "date": "2026-10-14",
+  "plan": 1,
+  "verses": "96:1-5",
+  "title": "Recite! The first command and Isaiah’s echo",
+  "translation": "Recite in the name of your Lord who created, created the human from a clinging clot. Recite! Your Lord is most generous, who taught by the pen, taught humans what they did not know.",
+  "root": {
+    "letters": "ق ر ء",
+    "translit": "q-r-ʾ",
+    "meaning": "to recite, read",
+    "verse": 1,
+    "index": 1,
+    "word_translit": "iqraʾ",
+    "word_meaning": "recite! / read!"
+  },
+  "body": "In **Aisha’s report** (al-Bukhari) these verses come first, and Muhammad answers “I am not a reciter”. **Paul Neuenkirchen** sees the scene as modelled on **Isaiah 40:6**, same root: “Cry!” “What shall I cry?” Isaiah 40:8 became the **Lutheran Reformation’s motto**.",
+  "bible": "Isaiah 40:6-8",
+  "relation": "echo",
+  "question": "Is the “I am not a reciter” scene remembered history, or a story later shaped by Isaiah 40?",
+  "question_type": "debate",
+  "source_label": "Neuenkirchen (2016) · al-Bukhari 3 · VDMA motto",
+  "source_url": "https://en.wikipedia.org/wiki/Muhammad%27s_first_revelation",
+  "reading": "Nicolai Sinai, The Qur'an: A Historical-Critical Introduction (2017)"
+}
