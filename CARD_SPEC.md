@@ -79,12 +79,25 @@ The card also shows the reading's root again as a review, automatically.
      passage fits its period, and what changes from earlier periods
    - historical context of late antique Arabia (inscriptions, Himyar, Byzantium, Persia)
    - manuscripts and readings (Birmingham, Sana'a, qira'at), van Putten, Sadeghi
-4. **Bible parallel, if any.** If a real biblical (or other late antique) parallel exists, add
-   it with a `relation`, and say in the body how Lutherans read the biblical side when
-   there is a real Lutheran angle: Luther's own writings (Small and Large Catechism, lectures
-   on Genesis, prefaces), the Augsburg Confession and Book of Concord, or core themes
-   (sola scriptura, grace and faith, law and gospel, theology of the cross, original sin).
-   Many passages have no real parallel. Then leave it out; never force one.
+4. **Bible parallel, if any.** If a real biblical parallel exists, add it with a `relation`,
+   and say in the body how Lutherans read the biblical side when there is a real Lutheran
+   angle: Luther's own writings (Small and Large Catechism, lectures on Genesis, prefaces),
+   the Augsburg Confession and Book of Concord, or core themes (sola scriptura, grace and
+   faith, law and gospel, theology of the cross, original sin). **The Bible and its Lutheran
+   reading come first.**
+   - **Other late antique texts** (Syriac Christian homilies and legends, apocryphal gospels,
+     Mishnah, Talmud, Midrash) are often closer to the Qur'an than the Bible is. When the
+     passage has a biblical parallel too, keep the Bible in `bible` and mention the other
+     text briefly in the body (e.g. Luke 1 as the parallel for Mary in Surah 19, with the
+     Protevangelium of James named in the body). Use `parallel_label` / `parallel_text`
+     instead of `bible` only when there is no real biblical parallel (e.g. the Seven Sleepers
+     in Surah 18 and Jacob of Serugh; Iblis refusing to bow and the Cave of Treasures).
+   - Good starting points: Corpus Coranicum's database of texts from the Qur'an's
+     environment (https://corpuscoranicum.org); Sidney Griffith, Gabriel Said Reynolds,
+     Joseph Witztum, Holger Zellentin, Angelika Neuwirth. Treat a parallel as part of a shared
+     late antique conversation, not proof of copying; present contested theories (e.g.
+     Luxenberg's Syriac readings) as contested.
+   - Many passages have no real parallel. Then leave it out; never force one.
 5. **News, if any.** Add `news` only when today's news connects naturally to this passage.
    Never as commentary on a tragedy, war or election.
 
@@ -110,7 +123,7 @@ Fairness and accuracy:
 | `root.word_translit`, `root.word_meaning` | that word, e.g. `"al-raḥmān"`, `"the Most Merciful"` |
 | `body` | ≤ 60 words; the academic angle, plus the Lutheran reading if there's a parallel. Mark 2–3 phrases with `**bold**` |
 | `bible` + `relation` | optional. Bible ref like `Matthew 6:9-10` (max 3 verses; text comes from ASV automatically). `relation`: `aligns`, `differs`, `retells`, or `echo` |
-| `parallel_label` + `parallel_text` + `relation` | instead of `bible`, for non-biblical texts (Mishnah, infancy gospels, Syriac legends); text ≤ 35 words, your paraphrase |
+| `parallel_label` + `parallel_text` + `relation` | instead of `bible`, only when there is no real biblical parallel: non-biblical texts (Mishnah, infancy gospels, Syriac homilies and legends); text ≤ 35 words, your paraphrase |
 | `news` | optional `{"text": "≤ 22 words", "url": "https://..."}` |
 | `question` | ≤ 24 words, one question about the text. Set `question_type`: `debate` when it asks the reader to weigh a real scholarly disagreement (ideally the one in the body), or `open` when it goes beyond the research: a fresh angle on the wording or a connection scholars rarely make. Mix both kinds over the week, roughly half each. Open questions must still be fair to the text: no false claims, no premise the wording contradicts |
 | `question_type` | `debate` (card label: “Scholars debate”) or `open` (card label: “Open question”) |
