@@ -1,0 +1,33 @@
+{
+  "type": "answer",
+  "date": "2026-10-15",
+  "answers": "2026-10-14",
+  "title": "An early report with Isaiah’s motifs woven in",
+  "phrase": {
+    "verse": 1,
+    "from": 1,
+    "to": 3,
+    "translit": "iqraʾ bi-smi rabbika",
+    "meaning": "recite in the name of your Lord"
+  },
+  "points": [
+    {
+      "label": "A remembered event",
+      "text": "In the tradition, **Aisha** tells the story, passed on by her nephew ʿUrwa and by al-Zuhri; al-Bukhari places it near the start of his Sahih. The shock and the reply “I am not a reciter” are read as the Prophet’s own memory.",
+      "who": "Muslim tradition · Sahih al-Bukhari 3"
+    },
+    {
+      "label": "Early, but shaped",
+      "text": "**Görke and Schoeler** trace the iqraʾ story through al-Zuhri back to **ʿUrwa** (d. 712). Yet they call it “possible, or even probable” that motifs from **Isaiah 40:6** helped shape it.",
+      "who": "Görke, Motzki & Schoeler, Der Islam (2012)"
+    },
+    {
+      "label": "A later literary scene",
+      "text": "**Stephen Shoemaker** suggests al-Zuhri himself built the long version from a shorter report. **Paul Neuenkirchen** reads the scene as based on Isaiah 40:6: how later Muslims imagined their prophet, not a record of the event.",
+      "who": "Shoemaker, Der Islam (2011) · Neuenkirchen (2016)"
+    }
+  ],
+  "bottom_text": "No consensus. The evidence leans to a story circulating by about 700 with biblical call motifs in it; whether a real experience lies beneath cannot be tested from these sources.",
+  "source_label": "Görke, Motzki & Schoeler, “First Century Sources for the Life of Muhammad?” (2012)",
+  "source_url": "https://www.pure.ed.ac.uk/ws/files/12692843/First_Century_Sources_for_the_Life_of_Muhammad_a_debate.pdf"
+}
