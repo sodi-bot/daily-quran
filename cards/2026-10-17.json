@@ -1,0 +1,33 @@
+{
+  "type": "answer",
+  "date": "2026-10-17",
+  "answers": "2026-10-16",
+  "title": "Oldest readings see a withdrawal the call ends",
+  "phrase": {
+    "verse": 1,
+    "from": 1,
+    "to": 2,
+    "translit": "yā ayyuhā l-muddaththir",
+    "meaning": "O you wrapped in your cloak"
+  },
+  "points": [
+    {
+      "label": "Fear and withdrawal",
+      "text": "In **Jabir’s report**, the Prophet hears a voice, goes to Khadija and asks to be wrapped up; then Surah 74 comes. Rubin finds that readings of the cloak as **hiding, sleep or reluctance** look like the earliest layer.",
+      "who": "Sahih al-Bukhari 4922 · Rubin, JSAI (1993)"
+    },
+    {
+      "label": "A soothsayer’s mantle",
+      "text": "**Nöldeke–Schwally**, followed by Buhl and Watt, linked the title to pre-Islamic **kāhins** who prophesied wrapped up. Rubin notes this reading is **absent from Muslim commentaries**: a modern comparative hypothesis.",
+      "who": "Nöldeke–Schwally, Geschichte des Qorāns"
+    },
+    {
+      "label": "Wrapped in prophethood",
+      "text": "**ʿIkrima** (d. 723) read the cloak as a burden to carry; later **al-Rāzī** and **al-Ālūsī** call the Prophet covered in prophethood, knowledge and mercy: a title of honour.",
+      "who": "ʿIkrima; al-Rāzī; al-Ālūsī, cited by Rubin"
+    }
+  ],
+  "bottom_text": "No full consensus. In the tafsir, the evidence leans to withdrawal, which “Arise!” ends; the honorific sense looks later. The kāhin link remains a plausible outside hypothesis, unattested in tafsir.",
+  "source_label": "Uri Rubin, “The Shrouded Messenger”, JSAI 16 (1993)",
+  "source_url": "https://almuslih.org/wp-content/uploads/2024/10/Rubin-U-The-Shrouded-Messenger.pdf"
+}
