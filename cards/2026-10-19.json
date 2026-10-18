@@ -1,0 +1,24 @@
+{
+  "type": "reading",
+  "date": "2026-10-19",
+  "plan": 3,
+  "title": "Father of flame and the carrier of firewood",
+  "translation": "Perish the hands of Abū Lahab, and perish he! His wealth and all he earned will not help him. He will burn in a fire of flame, and his wife too, carrier of firewood, with a rope of palm fibre around her neck.",
+  "root": {
+    "letters": "ل ه ب",
+    "translit": "l-h-b",
+    "meaning": "to blaze, flame",
+    "verse": 3,
+    "index": 4,
+    "word_translit": "lahab",
+    "word_meaning": "flame"
+  },
+  "body": "The nickname **Abū Lahab**, “father of flame”, returns as the **“fire of flame”** of verse 3. Early exegetes split on verse 4: **Ibn ʿAbbās** saw his wife strewing thorns; **Mujāhid** and **Qatāda** read “carrying firewood” as **spreading slander**. Proverbs uses that image; Luther’s Small Catechism: don’t slander, defend your neighbour.",
+  "bible": "Proverbs 26:20",
+  "relation": "echo",
+  "question": "Nickname, fire, firewood, rope: each image answers another. What might this matching say about how the surah pictures judgement?",
+  "question_type": "open",
+  "source_label": "Mawdudi, Tafhim al-Qur’an on Surah 111 · Small Catechism, Eighth Commandment",
+  "source_url": "https://islamicstudies.info/towards.php?sura=111",
+  "reading": "Uri Rubin, “Abū Lahab and Sūra CXI”, BSOAS 42 (1979)"
+}
