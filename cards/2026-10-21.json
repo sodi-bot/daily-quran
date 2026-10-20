@@ -1,0 +1,24 @@
+{
+  "type": "reading",
+  "date": "2026-10-21",
+  "plan": 4,
+  "title": "Fed against hunger, safe from fear",
+  "translation": "For the custom of Quraysh, their custom of the winter and summer journey: let them worship the Lord of this House, who fed them against hunger and made them safe from fear.",
+  "root": {
+    "letters": "ء م ن",
+    "translit": "ʾ-m-n",
+    "meaning": "to be safe, trust",
+    "verse": 4,
+    "index": 5,
+    "word_translit": "wa-āmanahum",
+    "word_meaning": "and made them safe"
+  },
+  "body": "Tradition links **īlāf** to safe-conduct pacts Hāshim won for Quraysh’s caravans; **Patricia Crone** called that “wrong as exegesis”, though such pacts were likely real. Food and safety, then worship: Luther’s **First Article** says God provides and “defends me against all danger”, so “it is my duty to thank… serve and obey Him.”",
+  "bible": "Leviticus 26:5",
+  "relation": "echo",
+  "question": "Was īlāf a set of real caravan pacts, or a word later explained by stories? How does each reading change the call to worship?",
+  "question_type": "debate",
+  "source_label": "Crone, BSOAS 70 (2007) · Small Catechism, First Article",
+  "source_url": "https://www.ias.edu/sites/default/files/hs/Crone_Articles/Crone_Quraysh_Leather_Trade.pdf",
+  "reading": "Uri Rubin, “The Īlāf of Quraysh: A Study of Sūra CVI”, Arabica 31 (1984)"
+}
