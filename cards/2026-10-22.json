@@ -1,0 +1,33 @@
+{
+  "type": "answer",
+  "date": "2026-10-22",
+  "answers": "2026-10-21",
+  "title": "Pacts likely real, but does the verse mean them?",
+  "phrase": {
+    "verse": 2,
+    "from": 1,
+    "to": 4,
+    "translit": "īlāfihim riḥlata l-shitāʾi wa-l-ṣayf",
+    "meaning": "their custom of the winter and summer journey"
+  },
+  "points": [
+    {
+      "label": "Real pacts behind it",
+      "text": "Ibn Saʿd, Ibn Ḥabīb and others tell of **Hāshim and his brothers** winning safe-conduct from rulers and tribes. Kister reads īlāf as **profit-sharing deals**, a “Pax Meccana” that made the journeys secure.",
+      "who": "M. J. Kister, “Mecca and Tamīm” (1965)"
+    },
+    {
+      "label": "Real, but not the verse",
+      "text": "Crone: “there is **no reason to think** that this verse alludes to any such arrangement.” The story is “wrong as exegesis”, yet such agreements were “likely… a **genuine Arabian institution**”, and Quraysh may well have used them.",
+      "who": "Patricia Crone, BSOAS 70 (2007)"
+    },
+    {
+      "label": "A rebuke, not a gift",
+      "text": "Rubin reads īlāf as **preoccupation**: Quraysh are too taken up with trade, though God already feeds the sanctuary. The call to worship becomes **a call back to the House**.",
+      "who": "Uri Rubin, Arabica 31 (1984)"
+    }
+  ],
+  "bottom_text": "No consensus. Kister and Crone both find such pacts plausible; still open is whether the surah’s īlāf names them, or later tradition read them into the word.",
+  "source_label": "Crone, BSOAS 70 (2007) · Kister, JESHO 8 (1965) · Rubin, Arabica 31 (1984)",
+  "source_url": "https://www.ias.edu/sites/default/files/hs/Crone_Articles/Crone_Quraysh_Leather_Trade.pdf"
+}
