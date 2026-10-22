@@ -1,0 +1,23 @@
+{
+  "type": "reading",
+  "date": "2026-10-23",
+  "plan": 5,
+  "title": "Abundance given, then prayer and sacrifice",
+  "translation": "We have given you abundance. So pray to your Lord and sacrifice. It is the one who hates you who is cut off.",
+  "root": {
+    "letters": "ك ث ر",
+    "translit": "k-th-r",
+    "meaning": "to be many, abound",
+    "verse": 1,
+    "index": 3,
+    "word_translit": "al-kawthar",
+    "word_meaning": "abundance"
+  },
+  "body": "Exegetes split on **al-kawthar**. In Muslim, **Anas** reports a river the Prophet was promised; in Bukhari, **Ibn ʿAbbās** calls it “the good” God gave him, and his pupil Ibn Jubayr makes the river part of that good. Gift, then prayer and offering: the **Apology** (XXIV) cites Psalm 116 for thank-offerings by those already reconciled.",
+  "bible": "Psalm 116:17",
+  "relation": "echo",
+  "question": "The surah moves from abundance given to an enemy “cut off”. How might these two images answer each other?",
+  "question_type": "open",
+  "source_label": "Bukhari 4966 · Muslim 400 · Apology of the Augsburg Conf. XXIV",
+  "source_url": "https://hadithunlocked.com/bukhari/65/108/1"
+}
