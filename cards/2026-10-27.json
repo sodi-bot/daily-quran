@@ -1,0 +1,27 @@
+{
+  "type": "answer",
+  "date": "2026-10-27",
+  "answers": "2026-10-23",
+  "title": "Abundance answers the taunt of being “cut off”",
+  "phrase": {
+    "verse": 3,
+    "from": 2,
+    "to": 4,
+    "translit": "shāniʾaka huwa l-abtar",
+    "meaning": "the one who hates you is the one cut off"
+  },
+  "points": [
+    {
+      "label": "What research comes close",
+      "text": "**Ibn Kathir** gathers reports that enemies called the Prophet **abtar**, “cut off” from heirs, when his sons died; al-Suddī says they thought his remembrance would end. Ibn Kathir replies that God **preserved his remembrance**, and the hater is the one forgotten.",
+      "who": "Ibn Kathir, Tafsir on Surah 108"
+    },
+    {
+      "label": "One possible reading",
+      "text": "The surah sets **kawthar**, “abundance”, against **abtar**, “cut off”, joined by the same -ar rhyme and the same “you”. The one mocked as lacking is named the one **given much**; prayer and sacrifice in the middle are how the gift is **received**."
+    }
+  ],
+  "bottom_text": "This is one reading. Ibn Kathir’s reports name four different enemies, so the heirs story may be read into the word; the surah itself never mentions sons.",
+  "source_label": "Ibn Kathir, Tafsir al-Qur’an al-‘Azim, Surah 108",
+  "source_url": "https://quran.com/108:1/tafsirs/en-tafisr-ibn-kathir"
+}
