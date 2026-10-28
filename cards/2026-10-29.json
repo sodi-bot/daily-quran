@@ -1,0 +1,33 @@
+{
+  "type": "answer",
+  "date": "2026-10-29",
+  "answers": "2026-10-28",
+  "title": "One vice or two? Early exegetes already split",
+  "phrase": {
+    "verse": 1,
+    "from": 2,
+    "to": 4,
+    "translit": "li-kulli humazatin lumaza",
+    "meaning": "to every slanderer and backbiter"
+  },
+  "points": [
+    {
+      "label": "One vice, two words",
+      "text": "**Ibn ʿAbbās** glosses the pair together: one who **reviles and disgraces** others. On this view the rhyming twin words name a single habit, doubled for force.",
+      "who": "Ibn ʿAbbās, cited by Ibn Kathir"
+    },
+    {
+      "label": "Gesture versus tongue",
+      "text": "**Mujāhid** splits them by means: humaza wounds **with hand and eye**, lumaza **with the tongue**. Ibn Kathir links humaza to Q 68:11, the **hammāz** “going about with slander”.",
+      "who": "Mujāhid, cited by Ibn Kathir"
+    },
+    {
+      "label": "Absent or face to face",
+      "text": "Others split them by presence: hamz is **backbiting** in the victim’s absence, lamz **deriding** to the face. Some commentators give the **reverse**, so this line is not fixed either.",
+      "who": "Maʿārif al-Qurʾān; Makarem Shirazi, Tafsir-e Nemuneh"
+    }
+  ],
+  "bottom_text": "No consensus. The early splits contradict each other, which leans toward one vice named twice; still open is whether the pair deliberately covers every way of wounding someone.",
+  "source_label": "Ibn Kathir, Tafsir on Surah 104 · Maʿārif al-Qurʾān",
+  "source_url": "https://parallelquran.com/tafsir/tafsir-ibn-kathir-abridged/?surah=104"
+}
