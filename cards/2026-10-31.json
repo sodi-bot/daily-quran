@@ -1,0 +1,27 @@
+{
+  "type": "answer",
+  "date": "2026-10-31",
+  "answers": "2026-10-30",
+  "title": "Dīn as reckoning, shown by how orphans fare",
+  "phrase": {
+    "verse": 1,
+    "from": 3,
+    "to": 4,
+    "translit": "yukadhdhibu bi-l-dīn",
+    "meaning": "denies the Judgment"
+  },
+  "points": [
+    {
+      "label": "What research comes close",
+      "text": "**Al-Ṭabarī** glosses dīn here as God’s **reward and punishment**; Ibn ʿAbbās says “God’s judgment”, Ibn Jurayj “**the reckoning**”. Jeffery treats this Arabic sense, “judgment, debt”, as a separate word from dīn “religion”, which he traces to Middle Persian.",
+      "who": "al-Ṭabarī, Tafsir; Jeffery, Foreign Vocabulary (1938)"
+    },
+    {
+      "label": "One possible reading",
+      "text": "**Fa-dhālika**, “that is the one”, defines the denier by conduct, not creed. If no reckoning is coming, the weak can be pushed aside at no cost. Dīn then reads as **accountability**, and belief in it shows in how orphans and the poor are treated."
+    }
+  ],
+  "bottom_text": "This is one reading. Counter-view: Pickthall renders dīn here as “religion”; then verses 2–3 describe what rejecting the faith looks like, not only denying a coming judgment.",
+  "source_label": "al-Ṭabarī, Tafsir on 107:1 · Jeffery, Foreign Vocabulary",
+  "source_url": "https://quran.ksu.edu.sa/tafseer/ibn-baghawy-tabary-qortobi/sura107-aya1.html"
+}
