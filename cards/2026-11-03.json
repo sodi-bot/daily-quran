@@ -1,0 +1,28 @@
+{
+  "type": "answer",
+  "date": "2026-11-03",
+  "answers": "2026-11-02",
+  "title": "Most commentators hear “visit the graves” as dying",
+  "phrase": {
+    "verse": 2,
+    "from": 1,
+    "to": 3,
+    "translit": "ḥattā zurtum al-maqābir",
+    "meaning": "until you visit the graves"
+  },
+  "points": [
+    {
+      "label": "Dying and burial",
+      "text": "**Al-Ṭabarī** glosses it “until you reached the graves and were buried”; **Ibn Kathīr** calls this the sound sense. The rivalry lasts a lifetime. ʿUmar ibn ʿAbd al-ʿAzīz drew more from the verb: a visitor must **go home**.",
+      "who": "al-Ṭabarī; Ibn Kathīr on 102:2"
+    },
+    {
+      "label": "Counting the dead",
+      "text": "**Muqātil and al-Kalbī** tie the verse to two Quraysh clans, Banū ʿAbd Manāf and Banū Sahm, who counted their living, then **went to the graveyards** to tally their dead. Here the visit is literal, a boast taken to its limit.",
+      "who": "reported by al-Baghawī on 102:1–2"
+    }
+  ],
+  "bottom_text": "The classical commentaries lean to dying, but the story survives: al-Qurṭubī and the Jalālayn keep both. Occasion reports also vary; Qatāda names Jews boasting of numbers instead.",
+  "source_label": "al-Ṭabarī, al-Baghawī, al-Qurṭubī, Ibn Kathīr on 102:2",
+  "source_url": "https://surahquran.org/aya-tafsser-2-102.html"
+}
