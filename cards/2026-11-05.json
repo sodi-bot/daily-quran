@@ -1,0 +1,33 @@
+{
+  "type": "answer",
+  "date": "2026-11-05",
+  "answers": "2026-11-04",
+  "title": "Real Abraha campaigns, but the elephant story stays contested",
+  "phrase": {
+    "verse": 1,
+    "from": 6,
+    "to": 7,
+    "translit": "bi-aṣḥābi l-fīl",
+    "meaning": "the companions of the elephant"
+  },
+  "points": [
+    {
+      "label": "A memory of Abraha",
+      "text": "**Pregill** hesitates to call it mere trope “given the mounting inscriptional evidence”. **Robin** finds a failed expedition plausible; a damaged Yemeni text naming Abraha, published 2025, may read “elephants”, hypothetically.",
+      "who": "Pregill; Robin; al-Bāriqī & Robin (2025)"
+    },
+    {
+      "label": "A legend retold",
+      "text": "**De Prémare** sees a Qur’anic midrash on Ptolemy’s elephants in **3 Maccabees 2–6**, turned by angels on his own soldiers. **Dye** finds this very plausible and the Abraha link “absurd”. **Beck** also reads Maccabees, arguing African war elephants were long gone.",
+      "who": "de Prémare (2000); Dye; Beck (2018)"
+    },
+    {
+      "label": "The birth-year problem",
+      "text": "If the campaign was the one inscribed in **552**, it falls decades before Muhammad’s probable birth. **Kropp** calls the shared year a hagiographical construct; **Cuypers** reads it symbolically.",
+      "who": "Kropp; Cuypers, in the Qur’an Seminar"
+    }
+  ],
+  "bottom_text": "Still divided, says Pregill. Inscriptions prove Abraha’s central Arabian campaigns, but the 552 text never names Mecca, while the legend reading must explain why tradition swapped stories (Khalfallah).",
+  "source_label": "Qur’an Seminar Commentary on Q 105 · al-Bāriqī & Robin (2025)",
+  "source_url": "https://www.degruyterbrill.com/document/doi/10.1515/9783110445909-052/pdf"
+}
