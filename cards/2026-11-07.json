@@ -1,0 +1,27 @@
+{
+  "type": "answer",
+  "date": "2026-11-07",
+  "answers": "2026-11-06",
+  "title": "Each step makes the next one easier",
+  "phrase": {
+    "verse": 10,
+    "from": 1,
+    "to": 2,
+    "translit": "fa-sa-nuyassiruhu lil-ʿusrā",
+    "meaning": "We will ease him toward hardship"
+  },
+  "points": [
+    {
+      "label": "What research comes close",
+      "text": "**Al-Farrāʾ** (in al-Qurṭubī): when good and bad are paired, “easing” serves both, like “give them glad tidings of a painful punishment”. **Ibn ʿĀshūr** allows an ironic echo. **Ibn Kathīr** cites forebears: good’s reward is **the next good deed**, evil’s the next evil.",
+      "who": "al-Qurṭubī; Ibn ʿĀshūr; Ibn Kathīr on 92:7–10"
+    },
+    {
+      "label": "One possible reading",
+      "text": "Verses 7 and 10 are identical except **one letter**: yusrā, ʿusrā. Neither road is drawn as a struggle. Giving and withholding both become **easier with practice**, so the person is shaped by the direction the first steps set."
+    }
+  ],
+  "bottom_text": "For al-Farrāʾ the shared verb is only rhetorical pairing, and al-Ṭabarī and Ibn Kathīr place the easing in God’s decree, not in human habit.",
+  "source_label": "al-Qurṭubī (citing al-Farrāʾ), al-Ṭabarī on 92:10 · Ibn Kathīr",
+  "source_url": "https://quran.ksu.edu.sa/tafseer/ibn-qortobi-tabary-saadi/sura92-aya10.html"
+}
