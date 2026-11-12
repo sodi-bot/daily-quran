@@ -1,0 +1,33 @@
+{
+  "type": "answer",
+  "date": "2026-11-13",
+  "answers": "2026-11-12",
+  "title": "Rank leads, but the time reading survives",
+  "phrase": {
+    "verse": 17,
+    "from": 1,
+    "to": 5,
+    "translit": "thumma kāna mina lladhīna āmanū",
+    "meaning": "then he was among those who believe"
+  },
+  "points": [
+    {
+      "label": "Higher in rank",
+      "text": "**Ibn ʿĀshūr** reads thumma as **al-tarākhī al-rutbī**: what follows outranks what precedes. Faith is the condition for the deeds to count, and “kāna” implies it came first. **Ṭanṭāwī** agrees: faith is the basis for accepting the deeds.",
+      "who": "Ibn ʿĀshūr, al-Taḥrīr; Ṭanṭāwī, al-Wasīṭ"
+    },
+    {
+      "label": "Later in time",
+      "text": "Deeds done before Islam, faith afterwards. Both cite **Ḥakīm ibn Ḥizām**, told by Muhammad: “You accepted Islam **with the good you had already done**.” Al-Qurṭubī also lists: believing, then staying a believer until death.",
+      "who": "Ibn ʿĀshūr; al-Qurṭubī on 90:17"
+    },
+    {
+      "label": "Simply “and”",
+      "text": "**Al-Baghawī** and **al-Qurṭubī** report that thumma here means **wa**, “and”. **Jalālayn** call it order of mention only, and **Ibn Kathīr** glosses: a believer at heart, along with these deeds.",
+      "who": "al-Baghawī; al-Qurṭubī; Jalālayn; Ibn Kathīr"
+    }
+  ],
+  "bottom_text": "No consensus. Ibn ʿĀshūr and Ṭanṭāwī favour rank, with faith making the deeds count, but the Ḥakīm ibn Ḥizām hadith keeps the time reading alive.",
+  "source_label": "Ibn ʿĀshūr, al-Taḥrīr wa-l-Tanwīr on 90:17 · al-Qurṭubī, Jalālayn",
+  "source_url": "https://quran-tafsir.net/ashour/sura90-aya17.html"
+}
