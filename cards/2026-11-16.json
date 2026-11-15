@@ -1,0 +1,27 @@
+{
+  "type": "answer",
+  "date": "2026-11-16",
+  "answers": "2026-11-14",
+  "title": "Ease may travel alongside hardship, not only after",
+  "phrase": {
+    "verse": 5,
+    "from": 2,
+    "to": 4,
+    "translit": "maʿa l-ʿusri yusran",
+    "meaning": "with hardship, ease"
+  },
+  "points": [
+    {
+      "label": "What research comes close",
+      "text": "Exegetes read the pair grammatically: **al-ʿusr** has the article, so verse 6 repeats the **same hardship**; **yusr** is indefinite, so a second, different ease. Hence the saying, reported via al-Ḥasan al-Baṣrī from Muhammad: “**one hardship cannot overcome two eases**.”",
+      "who": "Maʿārif al-Qurʾān on 94:5–6"
+    },
+    {
+      "label": "One possible reading",
+      "text": "“With” places ease **inside the same moment** as hardship, not at its end. The chest is opened and the burden lifted **while** the mission is still hard, and verse 7 sends the freed Prophet straight back to toil. Ease accompanies struggle rather than replacing it."
+    }
+  ],
+  "bottom_text": "The strongest counter-view: Qur’an 65:7 says God brings ease “after hardship” (baʿda ʿusrin), so maʿa may simply promise ease soon and surely, not at the same time.",
+  "source_label": "Maʿārif al-Qurʾān (Muhammad Shafi) on 94:5–6",
+  "source_url": "https://quran.com/94:5/tafsirs/en-tafsir-maarif-ul-quran"
+}
