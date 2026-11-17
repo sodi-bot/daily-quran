@@ -1,0 +1,32 @@
+{
+  "type": "answer",
+  "date": "2026-11-18",
+  "answers": "2026-11-17",
+  "title": "Mainstream commentary reads ḍāll as “unaware,” not sinful",
+  "phrase": {
+    "verse": 7,
+    "from": 1,
+    "to": 3,
+    "translit": "wa-wajadaka ḍāllan fa-hadā",
+    "meaning": "He found you ḍāll and guided you"
+  },
+  "points": [
+    {
+      "label": "Unaware of revelation",
+      "text": "Ibn Kathir reads 93:7 alongside **42:52**: “you knew not what the Book was, nor faith.” Maʿārif al-Qurʾān notes **ḍāll has two senses, “stray” and “unaware”**, and picks the second: unaware of the divine law before prophethood.",
+      "who": "Ibn Kathir; Muhammad Shafi, Maʿārif al-Qurʾān"
+    },
+    {
+      "label": "Wandering, seeking the way",
+      "text": "Translators like Pickthall and Yusuf Ali render **“wandering”**, Asad “lost on thy way.” Yusuf Ali explains: he “wandered **in quest of Unity**,” and stresses “no implication whatever of sin or error.”",
+      "who": "Yusuf Ali, Asad, Pickthall"
+    },
+    {
+      "label": "Error of belief",
+      "text": "The literal sense “astray” is possible, but the commentators cited here **avoid or explicitly reject** any error of creed. The verse’s pattern (orphan → shelter, need → wealth) frames ḍāll as a **lack God filled**, not a fault."
+    }
+  ],
+  "bottom_text": "The mainstream leans to “unaware” or “seeking,” backed by 42:52. How strong the word is remains open; the text pairs ḍāll with guidance, not with forgiveness.",
+  "source_label": "Maʿārif al-Qurʾān on 93:7 · Ibn Kathir on 93 · Yusuf Ali’s note",
+  "source_url": "https://quran.com/93:7/tafsirs/en-tafsir-maarif-ul-quran"
+}
