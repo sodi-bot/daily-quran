@@ -1,0 +1,33 @@
+{
+  "type": "answer",
+  "date": "2026-11-20",
+  "answers": "2026-11-19",
+  "title": "The evidence leans to a night of decree",
+  "phrase": {
+    "verse": 1,
+    "from": 3,
+    "to": 5,
+    "translit": "fī laylati l-qadri",
+    "meaning": "on the Night of Decree"
+  },
+  "points": [
+    {
+      "label": "A Christmas hymn",
+      "text": "Luxenberg reads qadr through Syriac **ḥelqā, “fate”**, linked to a word for both “birth horoscope” and **Christmas**; shahr becomes “vigil”. Richard Bell had compared verse 5 with **Christmas Eve**.",
+      "who": "Christoph Luxenberg; earlier, Richard Bell"
+    },
+    {
+      "label": "Night of predestination",
+      "text": "Sinai calls the Christmas step a **non sequitur** with no Syriac evidence, and notes anzala always sends down revelation. He reads a **“night of predetermination”**: an older night of fate, reinterpreted as the night revelation came down, like **44:3-4**.",
+      "who": "Nicolai Sinai, Der Islam 88 (2012)"
+    },
+    {
+      "label": "Revelation in Ramadan",
+      "text": "Ibn Kathir joins 97:1 with **2:185 and 44:3**: the night falls in **Ramadan**, when, per Ibn ʿAbbas, the whole Qur’an came down to the lowest heaven. Qatadah: the year’s matters are **“measured out”** then.",
+      "who": "Ibn Kathir, citing Ibn ʿAbbas and Qatadah"
+    }
+  ],
+  "bottom_text": "Sinai’s critique leaves Luxenberg’s philology weak; “decree” fits 44:3-4 and Qur’anic usage. Yet Sinai grants a Christmas link can’t be dismissed outright, so an echo of Luke 2 stays open.",
+  "source_label": "Sinai, Der Islam 88 (2012), pp. 13–19 · Ibn Kathir on 97",
+  "source_url": "https://almuslih.org/wp-content/uploads/Library/Sinai,%20N%20-%20Weihnachten.pdf"
+}
