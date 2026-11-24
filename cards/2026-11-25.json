@@ -1,0 +1,33 @@
+{
+  "type": "answer",
+  "date": "2026-11-25",
+  "answers": "2026-11-24",
+  "title": "Both readings are early; the grammar favours the person",
+  "phrase": {
+    "verse": 9,
+    "from": 3,
+    "to": 4,
+    "translit": "man zakkāhā",
+    "meaning": "whoever purifies it"
+  },
+  "points": [
+    {
+      "label": "The person purifies",
+      "text": "Qatada: whoever **purifies himself by righteous deeds**; Mujahid, ʿIkrima and Saʿid ibn Jubayr: “whoever sets it right”. The simplest grammar makes **man** (“whoever”) the subject of the verb zakkā.",
+      "who": "Qatada, Mujahid, ʿIkrima, Saʿid ibn Jubayr"
+    },
+    {
+      "label": "God purifies",
+      "text": "Ibn ʿAbbas (via ʿAli ibn Abi Talha and al-ʿAwfi) and Ibn Zayd: successful is the one **whose soul God purifies**. Al-Tabari’s own gloss opens this way. It continues verse 8, where **God is the actor**.",
+      "who": "Ibn ʿAbbas, Ibn Zayd; al-Tabari’s gloss"
+    },
+    {
+      "label": "A prayer that joins them",
+      "text": "Ibn Kathir cites the Prophet’s prayer (Muslim, via Zayd ibn Arqam): “Give my soul its **taqwā** and purify it; **You are the best of those who purify it**.” It echoes verses 8–9.",
+      "who": "Ibn Kathir, citing Sahih Muslim"
+    }
+  ],
+  "bottom_text": "No consensus: Ibn Kathir gives both without ranking them. The wording leans to the human as subject; the God reading needs an unstated subject but fits verse 8’s flow.",
+  "source_label": "Ibn Kathir on 91:9 · al-Tabari on 91:9",
+  "source_url": "https://quran.com/ash-shams/9/tafsirs/en-tafisr-ibn-kathir"
+}
