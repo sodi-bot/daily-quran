@@ -1,0 +1,33 @@
+{
+  "type": "answer",
+  "date": "2026-11-27",
+  "answers": "2026-11-26",
+  "title": "The “you” points to the Prophet; Shia exegetes demur",
+  "phrase": {
+    "verse": 1,
+    "from": 1,
+    "to": 2,
+    "translit": "ʿabasa wa-tawallā",
+    "meaning": "he frowned and turned away"
+  },
+  "points": [
+    {
+      "label": "The Prophet frowns",
+      "text": "Aisha’s report (al-Tirmidhi) says it came down about the blind **Ibn Umm Maktum**, whom the Prophet turned from while speaking with a revered idolater. Sayyid Qutb reads it as a **reproof of the Prophet**.",
+      "who": "Aisha in al-Tirmidhi; Sayyid Qutb"
+    },
+    {
+      "label": "An Umayyad man frowns",
+      "text": "A report from **Imam Jaʿfar al-Sadiq**, approved by **al-Sharif al-Murtada**, names an Umayyad man. Frowning at a poor believer, they argue, clashes with **“a great character”** (68:4).",
+      "who": "al-Murtada; report from al-Sadiq; Shia commentaries"
+    },
+    {
+      "label": "What the grammar shows",
+      "text": "Verses 1–2 say “he”; from verse 3 the text says **“you”**. **Abdel Haleem** calls this a deliberate shift (**iltifāt**): a reproach to the Prophet that begins by talking about him.",
+      "who": "M. A. S. Abdel Haleem on iltifāt"
+    }
+  ],
+  "bottom_text": "No consensus. The wording leans to the Prophet, since from verse 3 it says “you”. The Umayyad reading rests on a report and on 68:4, and must explain who the “you” is.",
+  "source_label": "al-Tirmidhi 3331 · Shia commentary on Surah 80 · Abdel Haleem, “Grammatical shift”",
+  "source_url": "https://soas-repository.worktribe.com/OutputFile/411107"
+}
